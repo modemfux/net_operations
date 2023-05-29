@@ -1,0 +1,19 @@
+# Vim undo files. Python#
+# #######################
+*.un~
+*.pyc
+*.swp
+*.bak
+
+# VSCode files
+.vscode/
+
+# Virual environments
+venv/
+.venv
+
+#Dist packages
+dist/
+
+#pytest's files#
+.coverage
