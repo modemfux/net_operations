@@ -1,9 +1,84 @@
-from net_operations.lib.os_functions import work_with_script_folder
 from cryptography.fernet import Fernet
 import getpass
 import os
 import yaml
 import json
+import subprocess
+
+
+def is_ip_address(ip):
+    if not isinstance(ip, str):
+        ip = str(ip)
+    sp = ip.split('.')
+    check_dict = {
+        'four_octets': len(sp) == 4,
+        'all_digits': all(map(lambda x: x.isdigit(), sp))
+    }
+    if check_dict['all_digits']:
+        check_dict['correct_numbers'] = all(
+            map(lambda x: int(x) in range(0, 256), sp)
+        )
+    else:
+        check_dict['correct_numbers'] = False
+    return all(check_dict.values())
+
+
+def check_availability_via_ping(ip):
+    if not is_ip_address(ip):
+        print('Вы ввели некорректный IP-адрес.')
+        raise Exception('Wrong IP format')
+    unavailable = bool(
+        subprocess.run(
+            f'ping -c 2 -n -W 1 {ip}',
+            stdout=subprocess.DEVNULL,
+            shell=True).returncode
+        )
+    return not unavailable
+
+
+def work_with_script_folder():
+    config_dir = os.getenv('HOME') + '/.config/'
+    own_dir = config_dir + 'net_operations'
+    state = os.path.exists(own_dir)
+    if not state:
+        logfile = f'{own_dir}/net_operations.log'
+        userfile = f'{own_dir}/known_users.yaml'
+        devices = f'{own_dir}/known_devices.yaml'
+        inventory = {
+            'directories': [config_dir, own_dir],
+            'files': [
+                {'dst_filename': logfile,
+                 'coll': '',
+                 'format': 'text'},
+                {'dst_filename': userfile,
+                 'coll': {},
+                 'format': 'yaml'},
+                {'dst_filename': devices,
+                 'coll': {},
+                 'format': 'yaml'}]}
+        # Check existence of local config directories
+        for directory in inventory['directories']:
+            if not os.path.exists(directory):
+                os.mkdir(directory)
+        # Check existence of local config files
+        for file in inventory['files']:
+            if not os.path.exists(file['dst_filename']):
+                data_to_structured_file(**file)
+    return own_dir
+
+
+def get_user_credentials():
+    '''
+    Asks user's login and password, then returns them as tuple.
+    '''
+    default_username = os.getlogin()
+    username = input(f'Enter your username [{default_username}]: ')
+    if not username:
+        username = default_username
+    password = None
+    while not password:
+        password = getpass.getpass('Enter your password: ')
+    return username, password
 
 
 def get_extension(name):
@@ -16,6 +91,8 @@ def data_to_structured_file(coll, dst_filename, format='yaml'):
             yaml.safe_dump(coll, dst)
         elif format == 'json':
             json.dump(coll, dst)
+        else:
+            dst.write(coll)
 
 
 def structured_file_to_data(src_filename):
@@ -86,5 +163,4 @@ def get_remote_device_data(device={}):
 
 def get_known_data(src_file):
     filename = work_with_script_folder() + '/' + src_file
-    known_data = structured_file_to_data(filename)
-    return known_data
+    return structured_file_to_data(filename) if os.path.exists(filename) else {}
