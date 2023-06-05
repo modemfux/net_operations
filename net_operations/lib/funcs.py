@@ -1,3 +1,4 @@
+from jinja2 import Environment, FileSystemLoader
 from cryptography.fernet import Fernet
 import getpass
 import os
@@ -164,3 +165,15 @@ def get_remote_device_data(device={}):
 def get_known_data(src_file):
     filename = work_with_script_folder() + '/' + src_file
     return structured_file_to_data(filename) if os.path.exists(filename) else {}
+
+
+def generate_from_template(template_path, **src_data):
+    path, file = os.path.split(template_path)
+    if path == '':
+        path = '.'
+    env = Environment(lstrip_blocks=True,
+                      trim_blocks=True,
+                      loader=FileSystemLoader(path))
+    template = env.get_template(file)
+    result = template.render(**src_data)
+    return result
