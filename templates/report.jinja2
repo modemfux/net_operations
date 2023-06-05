@@ -1,0 +1,61 @@
+## NAT Session License information:
+- Total qty: {{ nat_session_license.total }}
+- Used qty: {{ nat_session_license.used }}
+
+## NAT Sessions qty (2M per license):
+- Free: {{ nat_session_qty.free }} M
+- Used: {{ nat_session_qty.used }} M
+- Total: {{ nat_session_qty.total }} M
+
+## Service cards information
+
+{% for slot, info in slots.items() %}
+### Slot {{ slot }} main information
+- Board: {{ info.board }}
+- NAT BW Licenses on: {{ info.bw_license }}
+
+    {% for cpu, value in info.items() %}
+        {% if value is not none and cpu in ['cpu0', 'cpu1', 'pic0', 'pic1'] %}
+#### Slot {{ slot }} {{ value.cpu_type }} {{ value.cpu_id }}
+- Binded to service-location: {{ value.serv_loc }}
+- Service-instange-group name: {{ value.sig }}
+            {% if value.nat_bw_lic %}
+- Max BW for this unit: {{ value.default_bw + 20 }} Gbps
+            {% else %}
+- Max BW for this unit: {{ value.default_bw }} Gbps
+            {% endif %}
+- Current qty of allocated sessions: {{ value.cur_sess_qty }} M
+- Payload information:
+    - Current RX, Mbps: {{ value.payload.curr_rx_mbps }}
+    - Current RX, pps: {{ value.payload.curr_rx_pps }}
+    - Current TX, Mbps: {{ value.payload.curr_tx_mbps }}
+    - Current TX, pps: {{ value.payload.curr_tx_pps }}
+    - Historical Max RX, Mbps: {{ value.payload.hist_max_rx_mbps}}
+    - Historical Max RX Date: {{ value.payload.hist_max_rx_bps_date}}
+    - Historical Max TX, Mbps: {{ value.payload.hist_max_tx_mbps}}
+    - Historical Max TX Date: {{ value.payload.hist_max_tx_bps_date}}
+    - Current total NAT session: {{ value.total_session }}
+    - Historical Max total NAT session qty: {{ value.max_session_qty }}
+    - Historical Max total NAT session date: {{ value.max_session_date }}
+            {% if value.instances %}
+- **Binded NAT instances**:
+                {% for instance in value.instances %}
+                    {% for ni_name, ni_info in instance.items() %}
+    - NAT Instance name: {{ ni_name }}
+        - NAT Instance ID: {{ ni_info.ni_id }}
+                        {% for pool in ni_info['nat-pools'] %}
+            - IP Pool: {{ pool }}
+                        {% endfor %}
+                        {% for prot, lim in ni_info.limits.items() %}
+            - Limit for {{ prot}}: {{ lim }}
+                        {% endfor %}
+                        {% for port_v, val in ni_info.ports.items() %}
+            - {{ port_v }}: {{ val }}
+                        {% endfor %}
+                    {% endfor %}
+                {% endfor %}
+            {% endif %}
+        {% endif %}
+    {% endfor %}
+
+{% endfor %}

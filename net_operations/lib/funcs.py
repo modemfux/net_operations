@@ -167,7 +167,7 @@ def get_known_data(src_file):
     return structured_file_to_data(filename) if os.path.exists(filename) else {}
 
 
-def generate_from_template(template_path, **src_data):
+def generate_from_template(template_path, src_data):
     path, file = os.path.split(template_path)
     if path == '':
         path = '.'
@@ -175,5 +175,5 @@ def generate_from_template(template_path, **src_data):
                       trim_blocks=True,
                       loader=FileSystemLoader(path))
     template = env.get_template(file)
-    result = template.render(**src_data)
+    result = template.render(src_data)
     return result
