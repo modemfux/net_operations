@@ -1,3 +1,4 @@
+from datetime import datetime
 from net_operations.lib.constants import NAT_CARDS_CX600
 import copy
 import re
@@ -403,6 +404,7 @@ def fullreport_normalizing_summary(bras_dict, summ_dict, phy_dict):
 
 
 def get_report_dict(conn):
+    report_time = str(datetime.utcnow())
     phys = get_huawei_nat_physical_loc(conn)
     cards = get_huawei_nat_cards(conn)
     conf = get_huawei_nat_configuration(conn)
@@ -411,6 +413,7 @@ def get_report_dict(conn):
     summ = get_huawei_nat_summary_statistic(conn, phys)
 
     report_dict = fullreport_normalizing_start(cards)
+    report_dict['report_time'] = report_time
     fullreport_normalizing_phys(report_dict, phys)
     fullreport_normalizing_payload(report_dict, payload)
     fullreport_normalizing_sessions(report_dict, sess)
