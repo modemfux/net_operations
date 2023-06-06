@@ -43,13 +43,13 @@ def get_huawei_nat_configuration(conn) -> dict:
 
     # RegExps definitions
     reg_instance = r'nat instance (\S+) id (\d+)'
-    reg_address = (r'section \d+ ((?:\d+[.]){3}(?:\d+)) mask '
+    reg_address = (r'section \d+ ((?:\d+[.]){3}(?:\d+)) (?:mask )?'
                    r'(\d+(?:[ ]|(?:(?:\r)?\n))|(?:(?:\d+[.]){3}(?:\d+)))')
     reg_limits = r'nat session-limit (\S+) (\d+)'
     reg_ports = (r'port-range (\d+) '
                  r'(?:extended-port-range (\d+))?(?: extended-times (\d+))?')
     reg_sig = r'service-instance-group (\S+)'
-
+    reg_alg = r".*nat alg (\S+(?: \S+)*)"
     soft_nat_info = {}
 
     # output to search list of nat instances
@@ -61,13 +61,13 @@ def get_huawei_nat_configuration(conn) -> dict:
         soft_nat_info[ni_name] = {'ni_id': ni_id}
         ni_out = conn.send_commands([f'display nat instance {ni_name}'])
         iter_add = re.finditer(reg_address, ni_out)
-        if iter_add:
-            add_groups = [f'{gr.group(1)}/{gr.group(2).rstrip()}'
-                          for gr in iter_add]
+        add_groups = [f'{gr.group(1)} {gr.group(2).rstrip()}'
+                      for gr in iter_add]
+        if add_groups:
             soft_nat_info[ni_name]['nat-pools'] = add_groups
         iter_limit = re.finditer(reg_limits, ni_out)
-        if iter_limit:
-            limits = {lim.group(1): lim.group(2) for lim in iter_limit}
+        limits = {lim.group(1): lim.group(2) for lim in iter_limit}
+        if limits:
             soft_nat_info[ni_name]['limits'] = limits
         search_ports = re.search(reg_ports, ni_out)
         if search_ports:
@@ -78,6 +78,9 @@ def get_huawei_nat_configuration(conn) -> dict:
         sig = re.search(reg_sig, ni_out)
         if sig:
             soft_nat_info[ni_name]['sig'] = sig.group(1)
+        alg = re.search(reg_alg, ni_out)
+        if alg:
+            soft_nat_info[ni_name]['alg'] = alg.group(1)
 
     return soft_nat_info
 
@@ -404,6 +407,7 @@ def fullreport_normalizing_summary(bras_dict, summ_dict, phy_dict):
 
 
 def get_report_dict(conn):
+    ip = conn.ip
     report_time = str(datetime.utcnow())
     phys = get_huawei_nat_physical_loc(conn)
     cards = get_huawei_nat_cards(conn)
@@ -414,6 +418,7 @@ def get_report_dict(conn):
 
     report_dict = fullreport_normalizing_start(cards)
     report_dict['report_time'] = report_time
+    report_dict['device_ip'] = ip
     fullreport_normalizing_phys(report_dict, phys)
     fullreport_normalizing_payload(report_dict, payload)
     fullreport_normalizing_sessions(report_dict, sess)
