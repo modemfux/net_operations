@@ -1,10 +1,12 @@
+import re
 import os
 import logging
 import paramiko
 import getpass
 import time
-from Exscript import Account
-from Exscript.protocols import Telnet
+import telnetlib
+# from Exscript import Account
+# from Exscript.protocols import Telnet
 from net_operations.lib.funcs import get_user_credentials
 from net_operations.lib.funcs import work_with_script_folder
 from net_operations.lib.funcs import encrypt_password, decrypt_password
@@ -172,18 +174,54 @@ class NetworkOperations:
     def establish_telnet_connection(self):
         password = self.user.get_unenc_password()
         username = self.user.username
-        account = Account(name=username, password=password)
+        reg_login = [b'[Uu]ser.*[Nn]ame', b'[Ll]ogin']
+        reg_password = [b'[Pp]ass.*[Ww]ord']
+        reg_prompt = [b'[>#]', b']']
+        reg_wrong = r'([Ee]rror|[Ww]rong|[Ii]nvalid)'
+
+        # account = Account(name=username, password=password)
+        # try:
+        #     self.connection = Telnet()
+        #     self.connection.connect(self.ip)
+        #     self.connection.login(account)
+        #    own_logger.info(f'Connection to {self.ip} via Telnet established.')
+        #     self._conn = 'telnet'
+        # except Exception as error:
+        #     own_logger.error(f'Some error occured while connecting via Telnet'
+        #                      f'to {self.ip}. Error is: {error}')
+        #     self.connection.close()
+        #     self._telnet_failed = True
+        #     raise Exception(error)
+
+        def to_bytes(func):
+            def inner(arg):
+                res_arg = str(arg) + '\n'
+                return func(res_arg.encode())
+            return inner
+
         try:
-            self.connection = Telnet()
-            self.connection.connect(self.ip)
-            self.connection.login(account)
-            own_logger.info(f'Connection to {self.ip} via Telnet established.')
-            self._conn = 'telnet'
+            output = ''
+            self.connection = telnetlib.Telnet(self.ip)
+            self.connection = to_bytes(self.connection)
+            out_login = self.connection.expect(reg_login)
+            output += out_login[-1].decode()
+            self.connection.write(username)
+            out_password = self.connection.expect(reg_password)
+            output += out_password[-1].decode()
+            self.connection.write(password)
+            time.sleep(5)
+            output += self.connection.read_very_eager()
+            if re.search(reg_wrong, output):
+                err_message = f'Wrong login or password for device {self.ip}.'
+                own_logger.error(err_message)
+                raise Exception(err_message)
+            out_prompt = self.connection.expect(reg_prompt)
+            output += out_prompt[-1].decode()
+            output = output.replace('\r\n', '\n')
+            self.prompt = output.split('\n')[-1]
         except Exception as error:
             own_logger.error(f'Some error occured while connecting via Telnet'
                              f'to {self.ip}. Error is: {error}')
-            self.connection.close()
-            self._telnet_failed = True
             raise Exception(error)
 
     def send_telnet_command(self, command, waittime=0.5):
