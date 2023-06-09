@@ -1,5 +1,6 @@
 from jinja2 import Environment, FileSystemLoader
 from cryptography.fernet import Fernet
+import pwd
 import getpass
 import os
 import yaml
@@ -72,7 +73,11 @@ def get_user_credentials():
     '''
     Asks user's login and password, then returns them as tuple.
     '''
-    default_username = os.getlogin()
+    try:
+        default_username = os.getlogin()
+    except Exception:
+        uid = os.getuid()
+        default_username = pwd.getpwuid(uid).pw_name
     username = input(f'Enter your username [{default_username}]: ')
     if not username:
         username = default_username

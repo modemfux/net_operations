@@ -139,14 +139,19 @@ class NetworkOperations:
         if connection_state:
             try:
                 self.connection = client.invoke_shell(width=256)
+                self.connection.send('\r\n')
+                output = self.connection.recv(20000)
+                output = output.decode().replace('\r\n', '\n')
+                self.prompt = output.split('\n')[-1]
                 own_logger.info(f'Connection to {self.ip} via SSH established.')
                 print(f'Connection to {self.ip} via SSH established.')
                 self._conn = 'ssh'
-            except Exception:
+            except Exception as error:
                 self._ssh_failed = True
                 own_logger.error(f"There are some problems "
                                  f"with connection to {self.ip}. "
                                  "Check device's parameters.")
+                raise Exception(error)
 
     def send_ssh_command(self, command, waittime=1, recv_val=20000):
         for_send = (command + '\n').encode()
@@ -154,6 +159,7 @@ class NetworkOperations:
         time.sleep(waittime)
         result = self.connection.recv(recv_val)
         result = result.decode().replace('\r\n', '\n')
+        self.prompt = result.split('\n')[-1]
         own_logger.info(f'Command {command} executed on device {self.ip}')
         return result
 
@@ -178,7 +184,6 @@ class NetworkOperations:
         reg_password = [b'[Pp]ass.*[Ww]ord']
         reg_prompt = [b'[>#]', b']']
         reg_wrong = r'([Ee]rror|[Ww]rong|[Ii]nvalid)'
-
         # account = Account(name=username, password=password)
         # try:
         #     self.connection = Telnet()
@@ -202,7 +207,7 @@ class NetworkOperations:
         try:
             output = ''
             self.connection = telnetlib.Telnet(self.ip)
-            self.connection = to_bytes(self.connection)
+            self.connection.write = to_bytes(self.connection.write)
             out_login = self.connection.expect(reg_login)
             output += out_login[-1].decode()
             self.connection.write(username)
@@ -210,26 +215,37 @@ class NetworkOperations:
             output += out_password[-1].decode()
             self.connection.write(password)
             time.sleep(5)
-            output += self.connection.read_very_eager()
+            output += self.connection.read_very_eager().decode()
             if re.search(reg_wrong, output):
                 err_message = f'Wrong login or password for device {self.ip}.'
                 own_logger.error(err_message)
                 raise Exception(err_message)
+            self.connection.write('')
             out_prompt = self.connection.expect(reg_prompt)
             output += out_prompt[-1].decode()
             output = output.replace('\r\n', '\n')
             self.prompt = output.split('\n')[-1]
+            own_logger.info(f'Connection to {self.ip} via Telnet established')
+            print(f'Connection to {self.ip} via Telnet established')
+            self._conn = 'telnet'
         except Exception as error:
             own_logger.error(f'Some error occured while connecting via Telnet'
                              f'to {self.ip}. Error is: {error}')
             raise Exception(error)
 
-    def send_telnet_command(self, command, waittime=0.5):
-        for_send = (command + '\r\n')
-        self.connection.execute(for_send)
+    def send_telnet_command(self, command, waittime=1):
+        # for_send = (command + '\r\n')
+        # self.connection.execute(for_send)
+        # time.sleep(waittime)
+        # result = self.connection.response
+        # result = result.replace('\r\n', '\n')
+        # own_logger.info(f'Command {command} executed on device {self.ip}')
+        # return result
+        self.connection.write(command)
         time.sleep(waittime)
-        result = self.connection.response
+        result = self.connection.read_very_eager().decode()
         result = result.replace('\r\n', '\n')
+        self.prompt = result.split('\n')[-1]
         own_logger.info(f'Command {command} executed on device {self.ip}')
         return result
 
