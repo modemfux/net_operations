@@ -5,8 +5,6 @@ import paramiko
 import getpass
 import time
 import telnetlib
-# from Exscript import Account
-# from Exscript.protocols import Telnet
 from net_operations.lib.funcs import get_user_credentials
 from net_operations.lib.funcs import work_with_script_folder
 from net_operations.lib.funcs import encrypt_password, decrypt_password
@@ -184,19 +182,6 @@ class NetworkOperations:
         reg_password = [b'[Pp]ass.*[Ww]ord']
         reg_prompt = [b'[>#]', b']']
         reg_wrong = r'([Ee]rror|[Ww]rong|[Ii]nvalid)'
-        # account = Account(name=username, password=password)
-        # try:
-        #     self.connection = Telnet()
-        #     self.connection.connect(self.ip)
-        #     self.connection.login(account)
-        #    own_logger.info(f'Connection to {self.ip} via Telnet established.')
-        #     self._conn = 'telnet'
-        # except Exception as error:
-        #     own_logger.error(f'Some error occured while connecting via Telnet'
-        #                      f'to {self.ip}. Error is: {error}')
-        #     self.connection.close()
-        #     self._telnet_failed = True
-        #     raise Exception(error)
 
         def to_bytes(func):
             def inner(arg):
@@ -234,13 +219,6 @@ class NetworkOperations:
             raise Exception(error)
 
     def send_telnet_command(self, command, waittime=1):
-        # for_send = (command + '\r\n')
-        # self.connection.execute(for_send)
-        # time.sleep(waittime)
-        # result = self.connection.response
-        # result = result.replace('\r\n', '\n')
-        # own_logger.info(f'Command {command} executed on device {self.ip}')
-        # return result
         self.connection.write(command)
         time.sleep(waittime)
         result = self.connection.read_very_eager().decode()
