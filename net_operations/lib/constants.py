@@ -45,3 +45,18 @@ NAT_CARDS_CX600 = {
             }
         }
     }
+
+INITIAL_COMMANDS = {
+   'huawei': [
+       'screen-length 0 temporary',
+       'screen-width 512',
+       'Y'
+   ],
+   'cisco': [
+       'terminal length 0',
+       'terminal width 512'
+   ],
+   'd-link': [
+       'disable clipaging'
+   ]
+}

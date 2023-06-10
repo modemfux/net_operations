@@ -6,6 +6,7 @@ import os
 import yaml
 import json
 import subprocess
+from net_operations.lib.constants import INITIAL_COMMANDS
 
 
 def is_ip_address(ip):
@@ -46,6 +47,7 @@ def work_with_script_folder():
         logfile = f'{own_dir}/net_operations.log'
         userfile = f'{own_dir}/known_users.yaml'
         devices = f'{own_dir}/known_devices.yaml'
+        initial = f'{own_dir}/initial_commands.yaml'
         inventory = {
             'directories': [config_dir, own_dir],
             'files': [
@@ -57,6 +59,9 @@ def work_with_script_folder():
                  'format': 'yaml'},
                 {'dst_filename': devices,
                  'coll': {},
+                 'format': 'yaml'},
+                {'dst_filename': initial,
+                 'coll': INITIAL_COMMANDS,
                  'format': 'yaml'}]}
         # Check existence of local config directories
         for directory in inventory['directories']:
