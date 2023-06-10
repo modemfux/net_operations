@@ -187,3 +187,9 @@ def generate_from_template(template_path, src_data):
     template = env.get_template(file)
     result = template.render(src_data)
     return result
+
+
+def check_correct_type(data, type_):
+    if not isinstance(data, type_):
+        err = str(type(data))
+        raise TypeError(f'This is not {type_}, but {err}')
