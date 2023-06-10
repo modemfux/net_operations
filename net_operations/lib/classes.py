@@ -5,6 +5,7 @@ import paramiko
 import getpass
 import time
 import telnetlib
+from net_operations.lib.constants import INITIAL_COMMANDS
 from net_operations.lib.funcs import get_user_credentials
 from net_operations.lib.funcs import work_with_script_folder
 from net_operations.lib.funcs import encrypt_password, decrypt_password
@@ -21,6 +22,96 @@ own_handler = logging.FileHandler(logfile, mode='a')
 own_format = logging.Formatter("%(asctime)s >> %(levelname)s: %(message)s")
 own_handler.setFormatter(own_format)
 own_logger.addHandler(own_handler)
+
+
+class NetFiles:
+    def __init__(self):
+        config_dir = os.getenv('HOME') + '/.config/'
+        own_dir = config_dir + 'net_operations'
+        state = os.path.exists(own_dir)
+        if not state:
+            self.logfile = f'{own_dir}/net_operations.log'
+            self.userfile = f'{own_dir}/known_users.yaml'
+            self.devices = f'{own_dir}/known_devices.yaml'
+            self.initial = f'{own_dir}/initial_commands.yaml'
+            self._base_inventory = {
+                'directories': [config_dir, own_dir],
+                'files': {
+                    'log': {
+                        'dst_filename': self.logfile,
+                        'coll': '',
+                        'format': 'text'},
+                    'users': {
+                        'dst_filename': self.userfile,
+                        'coll': {},
+                        'format': 'yaml'},
+                    'devices': {
+                        'dst_filename': self.devices,
+                        'coll': {},
+                        'format': 'yaml'},
+                    'initial_commands': {
+                        'dst_filename': self.initial,
+                        'coll': INITIAL_COMMANDS,
+                        'format': 'yaml'}}}
+            # Check existence of local config directories
+            for directory in self._base_inventory['directories']:
+                if not os.path.exists(directory):
+                    os.mkdir(directory)
+            # Check existence of local config files
+            for file in self._base_inventory['files'].values():
+                if not os.path.exists(file['dst_filename']):
+                    data_to_structured_file(**file)
+        self.config_dir = own_dir
+
+    def clear_log(self):
+        with open(self.logfile, 'w') as f:
+            f.write('')
+
+    def reset_known_users(self):
+        data_to_structured_file(self._base_inventory['files']['users'])
+
+    def reset_known_devices(self):
+        data_to_structured_file(self._base_inventory['files']['devices'])
+
+    def reset_initial_commands(self):
+        data_to_structured_file(
+            self._base_inventory['files']['initial_commands'])
+
+    def get_known_devices(self):
+        return structured_file_to_data(self.devices)
+
+    def get_known_users(self):
+        return structured_file_to_data(self.userfile)
+
+    def get_current_initial_commands(self):
+        return structured_file_to_data(self.initial)
+
+    def update_known_users(self, new_user_data):
+        if not isinstance(new_user_data, dict):
+            err_type = str(type(new_user_data))
+            raise TypeError(f'This is not dict, but {err_type}')
+        data = self.get_known_users()
+        data.update(new_user_data)
+        data_to_structured_file(data)
+        print(f'{self.userfile} was updated.')
+
+    def update_known_device(self, new_device_data):
+        if not isinstance(new_device_data, dict):
+            err_type = str(type(new_device_data))
+            raise TypeError(f'This is not dict, but {err_type}')
+        data = self.get_known_devices()
+        data.update(new_device_data)
+        data_to_structured_file(data)
+        print(f'{self.devices} was updated.')
+
+    def update_initial_commands(self, new_data):
+        if not isinstance(new_data, dict):
+            err_type = str(type(new_data))
+            raise TypeError(f'This is not dict, but {err_type}')
+        data = self.get_known_users()
+        data.update(new_data)
+        data_to_structured_file(data)
+        print(f'{self.devices} was updated.')
 
 
 # Class for user's credential operations
@@ -49,6 +140,17 @@ class NetUser:
             data = {}
         data.update(user_dict)
         data_to_structured_file(data, filename)
+
+
+# Class for device management
+class NetDevice:
+    _dir = NetFiles()
+    devices = _dir.get_known_devices()
+
+    def __init__(self, ip, vendor):
+        self.ip = ip
+        self.vendor = vendor
+        self.device = {self.ip: {'vendor': self.vendor}}
 
 
 class NetworkOperations:
