@@ -41,4 +41,4 @@ class NetDevices:
 
     def get_device_initial_commands(self):
         commands = self._fs.get_current_initial_commands()
-        return commands.get(self.vendor, None)
+        return commands.get(self.device_vendor, None)
