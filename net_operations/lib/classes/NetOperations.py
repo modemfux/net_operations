@@ -21,7 +21,7 @@ class NetOperations:
         self.ip = self.device.device_ip
         if not user:
             self.user = NetUser()
-            users = user.get_all_known_users()
+            users = self.user.get_all_known_users()
             users_prompt = [f'{i + 1} - {users[i]}'
                             for i in range(min(9, len(users)))]
             users_prompt.insert(0, '0 - Create/update user')
