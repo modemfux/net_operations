@@ -8,7 +8,7 @@ class NetDevices:
 
     def __init__(self, ip, vendor, **kwargs):
         self.device_ip = ip
-        self.device_vendor = vendor
+        self.device_vendor = vendor.lower()
         self.device = {ip: {'vendor': vendor}}
         if kwargs:
             self.device[ip].update(**kwargs)
@@ -38,3 +38,7 @@ class NetDevices:
         if output:
             pprint(devices)
         return devices
+
+    def get_device_initial_commands(self):
+        commands = self._fs.get_current_initial_commands()
+        return commands.get(self.vendor, None)
