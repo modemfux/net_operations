@@ -63,12 +63,10 @@ def get_huawei_nat_configuration(conn) -> dict:
         iter_add = re.finditer(reg_address, ni_out)
         add_groups = [f'{gr.group(1)} {gr.group(2).rstrip()}'
                       for gr in iter_add]
-        if add_groups:
-            soft_nat_info[ni_name]['nat-pools'] = add_groups
+        soft_nat_info[ni_name]['nat-pools'] = add_groups
         iter_limit = re.finditer(reg_limits, ni_out)
         limits = {lim.group(1): lim.group(2) for lim in iter_limit}
-        if limits:
-            soft_nat_info[ni_name]['limits'] = limits
+        soft_nat_info[ni_name]['limits'] = limits
         search_ports = re.search(reg_ports, ni_out)
         if search_ports:
             pr, epr, et = search_ports.groups()
