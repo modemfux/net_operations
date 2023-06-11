@@ -59,16 +59,16 @@ class NetFiles:
         data_to_structured_file(
             {}, self._base_inventory['files']['initial_commands'])
 
-    def get_known_devices(self):
+    def get_known_devices(self) -> dict:
         return structured_file_to_data(self.devices)
 
-    def get_known_users(self):
+    def get_known_users(self) -> dict:
         return structured_file_to_data(self.userfile)
 
-    def get_current_initial_commands(self):
+    def get_current_initial_commands(self) -> dict:
         return structured_file_to_data(self.initial)
 
-    def get_log(self):
+    def get_log(self) -> str:
         return structured_file_to_data(self.logfile)
 
     def _update_conf_file(self, filename, new_data, data_type=dict):
@@ -86,7 +86,7 @@ class NetFiles:
         self._update_conf_file(self.userfile, new_user_data)
 
     def update_known_device(self, new_device_data):
-        self._update_conf_file(self.userfile, new_device_data)
+        self._update_conf_file(self.devices, new_device_data)
 
     def update_initial_commands(self, new_data):
         self._update_conf_file(self.userfile, new_data)
