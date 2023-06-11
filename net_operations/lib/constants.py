@@ -60,3 +60,25 @@ INITIAL_COMMANDS = {
        'disable clipaging'
    ]
 }
+
+CONFIG_MODE = {
+    'huawei': {
+        'in': ['return', 'system-view'],
+        'out': ['return']
+    },
+    'cisco': {
+        'in': ['end', 'configure terminal'],
+        'out': ['end']
+    }
+}
+
+PAGINATION = {
+    'huawei': {
+        'on': ['return', 'screen-length {} temporary'],
+        'off': ['return', 'screen-length 0 temporary']
+    },
+    'cisco': {
+        'on': ['end', 'terminal length {}'],
+        'off': ['end', 'terminal length 0']
+    }
+}

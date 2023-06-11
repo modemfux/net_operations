@@ -2,14 +2,10 @@ import re
 import paramiko
 import time
 import telnetlib
-# from net_operations.lib.funcs import get_user_credentials
-# from net_operations.lib.funcs import work_with_script_folder
-# from net_operations.lib.funcs import decrypt_password
-# from net_operations.lib.funcs import structured_file_to_data, get_known_data
-# from net_operations.lib.funcs import data_to_structured_file
 from net_operations.lib.logger import own_logger
 from net_operations.lib.classes.NetUser import NetUser
 from net_operations.lib.classes.NetDevices import NetDevices
+from net_operations.lib.constants import CONFIG_MODE, PAGINATION
 
 
 class NetOperations:
@@ -197,3 +193,63 @@ class NetOperations:
         commands_func_dict = {'telnet': self.send_telnet_commands,
                               'ssh': self.send_ssh_commands}
         return commands_func_dict[self.connection_type](*args, **kwargs)
+
+    def enter_config_mode(self, quiet=False):
+        commands = CONFIG_MODE[self.device.device_vendor]['in']
+        if commands:
+            output = self.send_commands(commands)
+        else:
+            output = ("This vendor isn't supported or "
+                      "don't have specialized config mode")
+            print(output)
+        if not quiet:
+            return output
+
+    def exit_config_mode(self, quiet=False):
+        commands = CONFIG_MODE[self.device.device_vendor]['out']
+        if commands:
+            output = self.send_commands(commands)
+        else:
+            output = ("This vendor isn't supported or "
+                      "don't have specialized config mode")
+            print(output)
+        if not quiet:
+            return output
+
+    def enable_pagination(self, lines=80, quiet=False):
+        raw_commands = PAGINATION[self.device.device_vendor]['on']
+        commands = [item.format(lines) if '{' in item else item
+                    for item in raw_commands]
+        output = self.send_commands(commands)
+        if not quiet:
+            return output
+
+    def disable_pagination(self, lines=80, quiet=False):
+        commands = PAGINATION[self.device.device_vendor]['off']
+        output = self.send_commands(commands)
+        if not quiet:
+            return output
+
+    def send_config_commands(self, *args, **kwargs):
+        output = self.enter_config_mode()
+        output = self.send_commands(*args, **kwargs)
+        output += self.exit_config_mode()
+        return output
+
+    # Context manager's functions
+    def __enter__(self):
+        return self
+
+    def __exit__(self, exc_type, exc_value, traceback):
+        self.connection.close()
+        own_logger.info(f'Connection to {self.ip} is closed.')
+        print(f'Connection to {self.ip} is closed.')
+        self.connection_type = None
+
+    def __str__(self):
+        if not self.connection_type:
+            str_net_ops = (f'NetOperations object. Connected to {self.ip} '
+                           f'via {self.connection_type}')
+        else:
+            str_net_ops = 'NetOperations object'
+        return str_net_ops
