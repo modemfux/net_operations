@@ -1,7 +1,11 @@
 # Net operations
 
+[![Maintainability](https://api.codeclimate.com/v1/badges/412ebe5da91a6036f1bc/maintainability)](https://codeclimate.com/github/modemfux/net_operations/maintainability)
+
 Little module for network operations with BRASes, routers etc.
 
 ## TODO
 
-- Exclude user handler to standalone block and refactor NetOperations initialization
+- Make script for generating NAT report from Huawei BRASes
+- Add functions to get basic information about Huawei BRASes (i.e. software, cards etc)
+
