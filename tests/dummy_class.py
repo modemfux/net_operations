@@ -37,10 +37,12 @@ class DummyConnection:
             '13': 'fixtures/dis_ver_sl_3.txt'
         }
 
-    def send_commands(self, commands_list):
+    def send_commands(self, commands_list, *args, **kwargs):
         if not isinstance(commands_list, list):
             commands_list = [commands_list]
         result = ''
+        if args or kwargs:
+            pass
         for command in commands_list:
             filename = self.files[self.commands[command]]
             with open(filename) as src:
