@@ -1,0 +1,9 @@
+dis cu conf license
+#
+license
+ active service-enhance slot 2
+ active nat session-table size 4 slot 3 engine 0
+ inactive bas slot 2
+#
+return
+<HW-BRAS>

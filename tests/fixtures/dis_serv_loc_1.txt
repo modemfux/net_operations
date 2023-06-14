@@ -1,0 +1,9 @@
+display service-location
+service-location 1
+ Location slot ID: 3 engine ID: 0
+ Current location slot ID: 3 engine ID: 0
+ Bound service-instance-group number: 1
+ Bound monitor-location-group number: 0
+ Batch-backup state: NA
+
+<HW-BRAS>

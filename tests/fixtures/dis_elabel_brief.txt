@@ -1,0 +1,18 @@
+display elabel brief
+Slot      BoardType            BarCode                         Description
+================================================================================
+BACKPLANE  CX6Z1BKPE           00000000000000000000
+LPU 1      CR57LPUF120A03      00000000000000000000            LPUF-51-E
+  PIC 1    CR57L2XFE0          0000000000000000                P51-E-2x10GBase LAN/WAN-SFP+
+LPU 2      CR52LPUF40B         00000000000000000000            LPUF-40-B
+  PIC 1    CR52L2XXN0          0000000000000000                P40-2x10GBase LAN/WAN-XFP
+VSU 3      CR57VSUF8000        00000000000000000000            VSUF80
+MPU 4      CX61MPUD2           00000000000000000000            MPUD2
+MPU 5      CX61MPUD2           00000000000000000000            MPUD2
+PWR 8
+  PEM 0    CR52PEMA            00000000000000000000
+PWR 9
+  PEM 0    CR52PEMA            00000000000000000000
+FAN 10     CR52FCBG            00000000000000000000
+
+<HW-BRAS>

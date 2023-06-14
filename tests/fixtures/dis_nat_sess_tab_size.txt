@@ -1,0 +1,11 @@
+display nat session-table size
+  --------------------------------------------------------------------------------
+  TotalSize :4  M
+  UsedSize  :4  M
+  FreeSize  :0  M
+
+  SlotID   CpuID       CurSessTblSize  CfgSessTblSize  ValidFlag
+  3        0(engine)    4 M             4 M            Valid
+  --------------------------------------------------------------------------------
+
+<HW-BRAS>

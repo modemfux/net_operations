@@ -1,0 +1,21 @@
+display version slot 3
+VSU 3  : uptime is 2009 days, 20 hours, 56 minutes
+         StartupTime   2017/12/12   15:20:51
+  Host    processor :
+  SDRAM Memory Size: 4096M  bytes
+  Flash Memory Size:  128M  bytes
+  CR5DVSUF8010 version information
+  PCB         Version : CR57VSUF80 REV B
+  EPLD        Version : 109
+  EPLD2       Version : 106
+  EPLD3       Version : 102
+  BootROM     Version : 2.33
+  BootLoad    Version : 2.20
+  FSURTP      Version : Version 2.1 RELEASE 0372
+  FSUKERNEL   Version : Version 2.1 RELEASE 0372
+  ASE         Version : 011
+  MonitorBUS version information:
+  Software    Version : 10.55
+  Configure license items:
+  CX600 2M NAT Session License
+<HW-BRAS>

@@ -1,0 +1,8 @@
+display license resource usage
+Info: Active License on master board: cfcard:/liccx600-x3_v800r009_202305150qvp60.dat
+ FeatureName    | ConfigureItemName       | ResourceUsage
+
+ CXFEA03           LCX6QS0100                  8/16
+ CXFEA03           LCX6BTOA00                  1/1
+ CXFEA03           LCX6NATDS00                 2/2
+<HW-BRAS>

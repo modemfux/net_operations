@@ -1,0 +1,20 @@
+display nat statistics table slot 3 engine 0
+This operation will take a few minutes. Press 'Ctrl+C' to break ...
+Slot: 3 Engine: 0
+---------------------------------------------------------------------------
+ Servermap tbl number                           :4
+ Frag Ssn tbl  number                           :1099
+ Total current nat444 sessions in Memory        :219084
+ Total current dslite sessions in Memory        :0
+ Total current nat64 sessions in Memory         :0
+ Total current PCP sessions in Memory           :0
+ Current PCP sessions from NAT444 in Memory     :0
+ Current PCP sessions from DSLITE in Memory     :0
+ Current PCP sessions from LAFT6 in Memory      :0
+ Current session speed(num/s)                   :3533
+ Maximum session table number in history        :1718823
+ Maximum session table time in history          :2022-06-08 09:48:00
+ Maximum user table number in history           :7559
+ Maximum user table time in history             :2021-11-26 02:16:02
+---------------------------------------------------------------------------
+<HW-BRAS>

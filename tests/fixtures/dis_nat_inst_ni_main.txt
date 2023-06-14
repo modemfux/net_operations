@@ -1,0 +1,19 @@
+display nat instance ni_main
+nat instance ni_main id 1
+ port-range 256 extended-port-range 320 extended-times 3
+ service-instance-group sig_main
+ nat address-group nag_main group-id 1
+   section 1 192.0.2.0 mask 25
+ nat outbound 3001 address-group nag_main
+ nat session-limit tcp 2048
+ nat session-limit udp 2048
+ nat session-limit icmp 50
+ nat session-limit total 2048
+ nat log host 10.10.10.10 8819 source 10.10.20.10 8819 vpn-instance NETFLOW
+ nat log host 10.10.10.11 8819 source 10.10.20.10 8819 vpn-instance NETFLOW
+ nat alg all
+ undo pcp enable
+ nat filter mode full-cone 5-tuple-session
+ nat log session enable netstream
+ nat log user enable netstream
+<HW-BRAS>
