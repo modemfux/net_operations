@@ -10,35 +10,34 @@ def get_huawei_nat_configuration(conn) -> dict:
     Get from Huawei CX device with VSUF Service cards
     information about configured nat instances.
     Returns dict like this:
-    {'ni_main':
-        {'ni_id': '1',
-         'nat-pools': ['81.23.175.0/25'],
-         'limits':
-            {'tcp': '2048',
-             'udp': '2048',
-             'icmp': '50',
-             'total': '2048'},
-         'ports':
-            {'port-range': '256',
-             'ext-port-range': '320',
-             'ext-times': '3'},
-         'sig': 'sig_main'
-         },
-     'ni_b2b_main':
-        {'ni_id': '2',
-         'nat-pools': ['85.140.40.251/32'],
-         'limits':
-            {'tcp': '1280',
-             'udp': '1280',
-             'icmp': '50',
-             'total': '1280'},
-         'ports':
-            {'port-range': '256',
-             'ext-port-range': '512',
-             'ext-times': '2'},
-    'sig': 'sig_main'
-        }
-    }
+    {'ni_main': {
+        'alg': 'all',
+        'ni_id': '1',
+        'nat-pools': ['192.0.2.0 25'],
+        'limits': {
+            'tcp': '2048',
+            'udp': '2048',
+            'icmp': '50',
+            'total': '2048'},
+        'ports': {
+            'port-range': '256',
+            'ext-port-range': '320',
+            'ext-times': '3'},
+        'sig': 'sig_main'},
+     'ni_b2b_main': {
+        'alg': 'all',
+        'ni_id': '2',
+        'nat-pools': ['203.0.113.1 32'],
+        'limits': {
+            'tcp': '1280',
+            'udp': '1280',
+            'icmp': '50',
+            'total': '1280'},
+        'ports': {
+            'port-range': '256',
+            'ext-port-range': '512',
+            'ext-times': '2'},
+        'sig': 'sig_main'}}
     '''
 
     # RegExps definitions
@@ -90,10 +89,10 @@ def get_huawei_nat_physical_loc(conn) -> dict:
     physical service VSUF cards and service-instance-locations.
     Return dict like this:
     {'1':
-        {'id': '0',
+        {'cpu_id': '0',
          'sig': 'sig_main',
          'slot': '3',
-         'type': 'engine'}
+         'cpu_type': 'engine'}
     }
     '''
 
@@ -225,18 +224,25 @@ def get_huawei_nat_summary_statistic(conn, nat_phys_dict) -> dict:
     return res_dict
 
 
-def get_huawei_nat_session_license(conn):
+def get_huawei_nat_session_license(conn) -> dict:
 
     '''
     Get from Huawei CX information about NAT sessions
     licenses usage.
     Returns dict like this:
-    {'distribution': {'per_cpu': [{'cpu_id': '0',
-                                'cur_sess_qty': '2',
-                                'slot': '3',
-                                'type': 'engine'}],
-                    'total': {'free': '2', 'total': '4', 'used': '2'}},
-    'license': {'total': '2', 'used': '1'}}
+    {
+        'distribution': {
+            'per_cpu': [{'cpu_id': '0',
+                         'cur_sess_qty': '4',
+                         'slot': '3',
+                         'cpu_type': 'engine'}],
+            'total': {'free': '0',
+                      'total': '4',
+                      'used': '4'}},
+        'license': {
+            'total': '2',
+            'used': '2'}
+    }
 
     'license' contains information about LCX6NATDS00 license usage.
 
@@ -261,16 +267,27 @@ def get_huawei_nat_session_license(conn):
         res_dict['license'] = searched.groupdict()
     output = conn.send_commands('display nat session-table size')
     searched = re.finditer(r_distr, output)
-    if searched:
-        for item in searched:
-            res_dict['distribution']['per_cpu'].append(item.groupdict())
+    for item in searched:
+        res_dict['distribution']['per_cpu'].append(item.groupdict())
     searched = re.search(r_total, output)
     if searched:
         res_dict['distribution']['total'] = searched.groupdict()
     return res_dict
 
 
-def get_huawei_nat_cards(conn):
+def get_huawei_nat_cards(conn) -> dict:
+    '''
+    Get from Huawei CX information about NAT service cards (VSUF)
+    and subcards (SP80 etc).
+    Returns dict like this:
+    {
+        '3': {
+            'board': 'CR5DVSUF8010',
+            'bw_license': [],
+            'pics': []
+            }
+    }
+    '''
     res_dict = {}
     r_vsu = r'VSU +(\d+) +\S+ +'
     r_vsuf = (r' *SDRAM Memory Size.*\n'
