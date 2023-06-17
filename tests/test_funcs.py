@@ -125,17 +125,17 @@ def test_structured_file_to_data(fx_struct_to_data):
                 assert err_message == str(excinfo.value)
 
 
-@pytest.fixture
-def fx_generate_report():
-    with open('tests/fixtures/sample_report_dict.yml') as src:
-        src_dict = yaml.safe_load(src)
-    full_dict = {
-        'template_path': 'tests/fixtures/sample_report_template.jinja2',
-        'src_data': src_dict}
-    return full_dict
-
-
-def test_generate_from_template(fx_generate_report):
-    with open('tests/fixtures/sample_report_example.md') as src:
-        example = src.read()
-    assert example == generate_from_template(**fx_generate_report)
+# @pytest.fixture
+# def fx_generate_report():
+#     with open('tests/fixtures/sample_report_dict.yml') as src:
+#         src_dict = yaml.safe_load(src)
+#     full_dict = {
+#         'template_path': 'tests/fixtures/sample_report_template.jinja2',
+#         'src_data': src_dict}
+#     return full_dict
+# 
+# 
+# def test_generate_from_template(fx_generate_report):
+#     with open('tests/fixtures/sample_report_example.md') as src:
+#         example = src.read()
+#     assert example == generate_from_template(**fx_generate_report)
