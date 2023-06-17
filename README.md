@@ -6,6 +6,8 @@
 
 Little module for network operations with BRASes, routers etc.
 
+Uses paramiko and telnetlib to connect to devices.
+
 ## TODO
 
 - Make script for generating NAT report from Huawei BRASes
