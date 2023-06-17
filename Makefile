@@ -7,4 +7,4 @@ test:
 install:
 	poetry install
 test-coverage:
-	poetry run pytest --cov=gendiff --cov-report xml
+	poetry run pytest --cov=net_operations --cov-report xml
