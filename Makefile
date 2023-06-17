@@ -4,6 +4,6 @@ venv:
 	poetry shell
 test:
 	poetry run pytest -v
-install
-    poetry install
+install:
+	poetry install
 
