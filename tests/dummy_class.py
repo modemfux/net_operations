@@ -21,21 +21,23 @@ class DummyConnection:
         }
 
         self.files = {
-            '0': 'fixtures/dis_nat_inst.txt',
-            '1': 'fixtures/dis_nat_inst_ni_main.txt',
-            '2': 'fixtures/dis_nat_inst_ni_b2b_main.txt',
-            '3': 'fixtures/dis_serv_loc.txt',
-            '4': 'fixtures/dis_serv_loc_1.txt',
-            '5': 'fixtures/dis_serv_inst_gr.txt',
-            '6': 'fixtures/dis_serv_inst_gr_sig_main.txt',
-            '7': 'fixtures/dis_nat_stat_payload.txt',
-            '8': 'fixtures/dis_nat_stat_tab_sl_3_en_0.txt',
-            '9': 'fixtures/dis_lic_res_usage.txt',
-            '10': 'fixtures/dis_nat_sess_tab_size.txt',
-            '11': 'fixtures/dis_elabel_brief.txt',
-            '12': 'fixtures/dis_curr_conf_lic.txt',
-            '13': 'fixtures/dis_ver_sl_3.txt'
+            '0': 'tests/fixtures/dis_nat_inst.txt',
+            '1': 'tests/fixtures/dis_nat_inst_ni_main.txt',
+            '2': 'tests/fixtures/dis_nat_inst_ni_b2b_main.txt',
+            '3': 'tests/fixtures/dis_serv_loc.txt',
+            '4': 'tests/fixtures/dis_serv_loc_1.txt',
+            '5': 'tests/fixtures/dis_serv_inst_gr.txt',
+            '6': 'tests/fixtures/dis_serv_inst_gr_sig_main.txt',
+            '7': 'tests/fixtures/dis_nat_stat_payload.txt',
+            '8': 'tests/fixtures/dis_nat_stat_tab_sl_3_en_0.txt',
+            '9': 'tests/fixtures/dis_lic_res_usage.txt',
+            '10': 'tests/fixtures/dis_nat_sess_tab_size.txt',
+            '11': 'tests/fixtures/dis_elabel_brief.txt',
+            '12': 'tests/fixtures/dis_curr_conf_lic.txt',
+            '13': 'tests/fixtures/dis_ver_sl_3.txt'
         }
+
+        self.ip = '127.0.0.1'
 
     def send_commands(self, commands_list, *args, **kwargs):
         if not isinstance(commands_list, list):

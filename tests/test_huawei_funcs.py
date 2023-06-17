@@ -5,6 +5,7 @@ from net_operations.lib.huawei_funcs import get_huawei_nat_payload_stats
 from net_operations.lib.huawei_funcs import get_huawei_nat_summary_statistic
 from net_operations.lib.huawei_funcs import get_huawei_nat_session_license
 from net_operations.lib.huawei_funcs import get_huawei_nat_cards
+from net_operations.lib.huawei_funcs import get_report_dict
 import pytest
 
 
@@ -141,3 +142,80 @@ def fx_nat_cards():
 def test_get_huawei_nat_cards(fx_nat_cards):
     test_suit = get_huawei_nat_cards(dummy)
     assert fx_nat_cards == test_suit
+
+
+@pytest.fixture
+def fx_normalized_dict():
+    normalized_dict = {
+        'slots': {
+            '3': {
+                'board': 'CR5DVSUF8010',
+                'bw_license': [],
+                'cpu0': {
+                    'cpu_id': '0',
+                    'cpu_type': 'engine',
+                    'nat_bw_lic': False,
+                    'default_bw': 20,
+                    'serv_loc': '1',
+                    'sig': 'sig_main',
+                    'payload': {
+                        'curr_rx_mbps': '3142.623',
+                        'curr_rx_pps': '411826',
+                        'curr_tx_mbps': '3139.69',
+                        'curr_tx_pps': '409961',
+                        'hist_max_rx_mbps': '9350.49',
+                        'hist_max_rx_bps_date': '2023-05-03 05:15:02',
+                        'hist_max_tx_mbps': '8943.067',
+                        'hist_max_tx_bps_date': '2022-03-22 0'},
+                    'cur_sess_qty': 4,
+                    'instances': [{
+                        'ni_main': {
+                            'ni_id': '1',
+                            'nat-pools': ['192.0.2.0 25'],
+                            'limits': {
+                                'tcp': '2048',
+                                'udp': '2048',
+                                'icmp': '50',
+                                'total': '2048'},
+                            'ports': {
+                                'port-range': '256',
+                                'ext-port-range': '320',
+                                'ext-times': '3'},
+                            'sig': 'sig_main',
+                            'alg': 'all'}},
+                        {'ni_b2b_main': {
+                            'ni_id': '2',
+                            'nat-pools': ['203.0.113.1 32'],
+                            'limits': {
+                                'tcp': '1280',
+                                'udp': '1280',
+                                'icmp': '50',
+                                'total': '1280'},
+                            'ports': {
+                                'port-range': '256',
+                                'ext-port-range': '512',
+                                'ext-times': '2'},
+                            'sig': 'sig_main',
+                            'alg': 'all'}}],
+                    'total_session': '219084',
+                    'max_session_qty': '1718823',
+                    'max_session_date': '2022-06-08 09:48:00',
+                    'max_user_qty': '7559',
+                    'max_user_date': '2021-11-26 02:16:02'},
+                'pic0': None}},
+            'report_time': '2023-06-17 04:00:06.835529',
+            'device_ip': '127.0.0.1',
+            'nat_session_license': {
+                'used': '2',
+                'total': '2'},
+            'nat_session_qty': {
+                'total': '4',
+                'used': '4',
+                'free': '0'}}
+    return normalized_dict
+
+
+def test_get_report_dict(fx_normalized_dict):
+    test_out = get_report_dict(dummy)
+    fx_normalized_dict['report_time'] = test_out['report_time']
+    assert fx_normalized_dict == test_out
