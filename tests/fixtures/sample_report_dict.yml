@@ -1,0 +1,67 @@
+device_ip: 127.0.0.1
+nat_session_license:
+  total: '2'
+  used: '2'
+nat_session_qty:
+  free: '0'
+  total: '4'
+  used: '4'
+report_time: '2023-06-17 04:00:06.835529'
+slots:
+  '3':
+    board: CR5DVSUF8010
+    bw_license: []
+    cpu0:
+      cpu_id: '0'
+      cpu_type: engine
+      cur_sess_qty: 4
+      default_bw: 20
+      instances:
+      - ni_main:
+          alg: all
+          limits:
+            icmp: '50'
+            tcp: '2048'
+            total: '2048'
+            udp: '2048'
+          nat-pools:
+          - 192.0.2.0 25
+          ni_id: '1'
+          ports:
+            ext-port-range: '320'
+            ext-times: '3'
+            port-range: '256'
+          sig: sig_main
+      - ni_b2b_main:
+          alg: all
+          limits:
+            icmp: '50'
+            tcp: '1280'
+            total: '1280'
+            udp: '1280'
+          nat-pools:
+          - 203.0.113.1 32
+          ni_id: '2'
+          ports:
+            ext-port-range: '512'
+            ext-times: '2'
+            port-range: '256'
+          sig: sig_main
+      max_session_date: '2022-06-08 09:48:00'
+      max_session_qty: '1718823'
+      max_user_date: '2021-11-26 02:16:02'
+      max_user_qty: '7559'
+      nat_bw_lic: false
+      payload:
+        curr_rx_mbps: '3142.623'
+        curr_rx_pps: '411826'
+        curr_tx_mbps: '3139.69'
+        curr_tx_pps: '409961'
+        hist_max_rx_bps_date: '2023-05-03 05:15:02'
+        hist_max_rx_mbps: '9350.49'
+        hist_max_tx_bps_date: 2022-03-22 0
+        hist_max_tx_mbps: '8943.067'
+      serv_loc: '1'
+      sig: sig_main
+      total_session: '219084'
+    pic0: null

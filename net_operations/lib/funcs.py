@@ -6,7 +6,6 @@ import os
 import yaml
 import json
 import subprocess
-from net_operations.lib.constants import INITIAL_COMMANDS
 
 
 def is_ip_address(ip):
@@ -39,41 +38,6 @@ def check_availability_via_ping(ip):
     return not unavailable
 
 
-def work_with_script_folder():
-    config_dir = os.getenv('HOME') + '/.config/'
-    own_dir = config_dir + 'net_operations'
-    state = os.path.exists(own_dir)
-    if not state:
-        logfile = f'{own_dir}/net_operations.log'
-        userfile = f'{own_dir}/known_users.yaml'
-        devices = f'{own_dir}/known_devices.yaml'
-        initial = f'{own_dir}/initial_commands.yaml'
-        inventory = {
-            'directories': [config_dir, own_dir],
-            'files': [
-                {'dst_filename': logfile,
-                 'coll': '',
-                 'format': 'text'},
-                {'dst_filename': userfile,
-                 'coll': {},
-                 'format': 'yaml'},
-                {'dst_filename': devices,
-                 'coll': {},
-                 'format': 'yaml'},
-                {'dst_filename': initial,
-                 'coll': INITIAL_COMMANDS,
-                 'format': 'yaml'}]}
-        # Check existence of local config directories
-        for directory in inventory['directories']:
-            if not os.path.exists(directory):
-                os.mkdir(directory)
-        # Check existence of local config files
-        for file in inventory['files']:
-            if not os.path.exists(file['dst_filename']):
-                data_to_structured_file(**file)
-    return own_dir
-
-
 def get_user_credentials():
     '''
     Asks user's login and password, then returns them as tuple.
@@ -101,9 +65,9 @@ def data_to_structured_file(coll, dst_filename, format='yaml'):
         if format == 'yaml':
             yaml.safe_dump(coll, dst)
         elif format == 'json':
-            json.dump(coll, dst)
+            json.dump(coll, dst, indent=4)
         else:
-            dst.write(coll)
+            dst.write(str(coll))
 
 
 def structured_file_to_data(src_filename):
@@ -131,50 +95,6 @@ def encrypt_password(raw_password):
     encryptor = Fernet(key)
     encrypted_password = encryptor.encrypt(raw_password.encode())
     return key.decode(), encrypted_password.decode()
-
-
-def get_remote_device_data(device={}):
-    # Get known routers informations
-    memory_file = work_with_script_folder() + '/known_routers.yaml'
-    if os.path.exists(memory_file):
-        with open(memory_file) as src:
-            known_routers = yaml.safe_load(src)
-    else:
-        known_routers = {}
-
-    if not device.get('ip'):
-        ip = input('Не хватает параметра ip. Введите его: ')
-        device['ip'] = ip
-
-    if known_routers.get(ip):
-        user = known_routers[ip]['username']
-        key = known_routers[ip]['key']
-        password = decrypt_password(key, known_routers[ip]['password'])
-        print(f'Для адреса {ip} есть сохраненные данные для '
-              f'пользователь {user}.')
-        choice = input('Хотите воспользоваться ими?[Y/n]: ').lower()
-        if choice in ['', 'y']:
-            device['username'] = user
-            device['password'] = password
-            return device
-
-    known_routers[ip] = {}
-    username = input('Не хватает параметра username. Введите его: ')
-    password = getpass('Не хватает параметра password. Введите его: ')
-    device['username'] = username
-    device['password'] = password
-    known_routers[ip]['username'] = username
-    key, enc_pass = encrypt_password(password)
-    known_routers[ip]['key'] = key
-    known_routers[ip]['password'] = enc_pass
-    with open(memory_file, 'w') as dst:
-        yaml.safe_dump(known_routers, dst)
-    return device
-
-
-def get_known_data(src_file):
-    filename = work_with_script_folder() + '/' + src_file
-    return structured_file_to_data(filename) if os.path.exists(filename) else {}
 
 
 def generate_from_template(template_path, src_data):
