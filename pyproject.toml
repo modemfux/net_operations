@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "net-operations"
-version = "0.2.0"
+version = "20230618"
 description = ""
 authors = ["modemfux <modemfux@gmail.com>"]
 readme = "README.md"
