@@ -37,10 +37,10 @@ class NetFiles:
             for directory in self._base_inventory['directories']:
                 if not os.path.exists(directory):
                     os.mkdir(directory)
-            # Check existence of local config files
-            for file in self._base_inventory['files'].values():
-                if not os.path.exists(file['dst_filename']):
-                    data_to_structured_file(**file)
+        # Check existence of local config files
+        for file in self._base_inventory['files'].values():
+            if not os.path.exists(file['dst_filename']):
+                data_to_structured_file(**file)
         self.config_dir = own_dir
 
     def clear_log(self):
