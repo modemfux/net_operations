@@ -44,21 +44,21 @@
     - NAT Instance ID: 1
     - Enabled ALG: all
     - IP Pool: 192.0.2.0 25
-    - Limit for tcp: 2048
-    - Limit for udp: 2048
     - Limit for icmp: 50
+    - Limit for tcp: 2048
     - Limit for total: 2048
-    - port-range: 256
+    - Limit for udp: 2048
     - ext-port-range: 320
     - ext-times: 3
+    - port-range: 256
   - NAT Instance name: ni_b2b_main
     - NAT Instance ID: 2
     - Enabled ALG: all
     - IP Pool: 203.0.113.1 32
-    - Limit for tcp: 1280
-    - Limit for udp: 1280
     - Limit for icmp: 50
+    - Limit for tcp: 1280
     - Limit for total: 1280
-    - port-range: 256
+    - Limit for udp: 1280
     - ext-port-range: 512
     - ext-times: 2
+    - port-range: 256
