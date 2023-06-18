@@ -37,10 +37,10 @@ class NetFiles:
             for directory in self._base_inventory['directories']:
                 if not os.path.exists(directory):
                     os.mkdir(directory)
-            # Check existence of local config files
-            for file in self._base_inventory['files'].values():
-                if not os.path.exists(file['dst_filename']):
-                    data_to_structured_file(**file)
+        # Check existence of local config files
+        for file in self._base_inventory['files'].values():
+            if not os.path.exists(file['dst_filename']):
+                data_to_structured_file(**file)
         self.config_dir = own_dir
 
     def clear_log(self):
@@ -90,3 +90,14 @@ class NetFiles:
 
     def update_initial_commands(self, new_data):
         self._update_conf_file(self.userfile, new_data)
+
+    def verify_own_files(self, silent=False):
+        missing = []
+        for file in self._base_inventory['files'].values():
+            filename = file['dst_filename']
+            if not os.path.exists(filename):
+                data_to_structured_file(**file)
+                missing.append(filename)
+        if not silent:
+            print('This files were missing:')
+            print(', '.join(missing))
