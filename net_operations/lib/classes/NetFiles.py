@@ -90,3 +90,14 @@ class NetFiles:
 
     def update_initial_commands(self, new_data):
         self._update_conf_file(self.userfile, new_data)
+
+    def verify_own_files(self, silent=False):
+        missing = []
+        for file in self._base_inventory['files'].values():
+            filename = file['dst_filename']
+            if not os.path.exists(filename):
+                data_to_structured_file(**file)
+                missing.append(filename)
+        if not silent:
+            print('This files were missing:')
+            print(', '.join(missing))
