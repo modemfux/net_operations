@@ -12,6 +12,11 @@ pyyaml = "^6.0"
 paramiko = "^3.2.0"
 jinja2 = "^3.1.2"
 
+
+[tool.poetry.scripts]
+nat_report = "net_operations.scripts.nat_report:main"
+
+
 [tool.poetry.group.dev.dependencies]
 flake8 = "^6.0.0"
 pytest = "^7.3.1"
