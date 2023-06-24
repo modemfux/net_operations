@@ -1,0 +1,42 @@
+display value-added-service policy unlim_24_36mbps
+
+ Service template index                  : 22
+ Service template name                   : unlim_24_36mbps
+ Service policy type                     : DAA
+ Rate limit mode outbound                : --
+ Tariff level                            : 1
+  QoS profile                            : 2mbps
+  Flow-queue-shaping inbound             : shaping 2000
+  Flow-queue-shaping outbound            : shaping 2000
+  Service IP type                        : IPv4
+  Accounting state                       : Off
+ Tariff level                            : 2
+  QoS profile                            : 2mbps
+  Flow-queue-shaping inbound             : shaping 2000
+  Flow-queue-shaping outbound            : shaping 2000
+  Service IP type                        : IPv4
+  Accounting state                       : Off
+ Tariff level                            : 3
+  QoS profile                            : 24mbps
+  Flow-queue-shaping inbound             : shaping 24000
+  Flow-queue-shaping outbound            : shaping 24000
+  Service IP type                        : IPv4
+  Accounting state                       : Off
+ Tariff level                            : 4
+  QoS profile                            : 36mbps
+  Flow-queue-shaping inbound             : shaping 36000
+  Flow-queue-shaping outbound            : shaping 36000
+  Service IP type                        : IPv4
+  Accounting state                       : Off
+ Accounting scheme name                  : default1
+ Accounting server type                  : RADIUS
+ Used number of service policy           : 0
+ User number of service policy           : 0
+ Accounting-service-policy inbound       : enable
+ Accounting-service-policy outbound      : enable
+ Accounting-together                     : disable
+ Tariff-queue-mapping                    : disable
+ Traffic-separate                        : disable
+ User accounting-together                : disable
+
+<HW-BRAS>

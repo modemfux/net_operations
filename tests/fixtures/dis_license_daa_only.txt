@@ -1,0 +1,36 @@
+display license
+ Active license    : cfcard:/CX1_LICCX600-X8_V600R009_20210913M6LB60.dat
+ License state     : Normal
+ Revoke ticket     : No ticket
+
+ MTS PJSC
+
+ Product name      : CX600
+ Product version   : V600R009
+ License Serial No : LIC20210913M6LB60
+ Creator           : Huawei Technologies Co., Ltd.
+ Created Time      : 2021-09-13 20:30:41
+ Feature name      : CXFEA03
+ Authorize type    : COMM
+ Expired date      : PERMANENT
+ Trial days        : 60
+
+ Item name          Item type  Value    Description
+ -------------------------------------------------------------
+ LCX6MHAG00         Function   YES      CX600 Cross-chassis HAG Function License
+ LCX6BSVC00         Function   YES      CX600 Base SW Version Control
+ LCX6L2TP00         Function   YES      CX600 L2TP Function License
+ LCX6DAA00          Function   YES      CX600 DAA Function License
+ LCX6BASUPG00       Function   YES      CX600 PPPoE/IPoE Function License
+ LCX6QS0100         Resource   46       CX600 Subscribers Quantity(1k Subscribers)
+ LCX6NATDS00        Resource   6        CX600 2M NAT Session License
+ LCX64020G00        Resource   2        CX600 20Gbps capacity License for VSU Series Units
+
+ Item name          (View)Resource License Command-line
+ -------------------------------------------------------------
+ LCX6NATDS00        (License)active nat session-table size
+ LCX64020G00        (License)active nat bandwidth-enhance slot slot-id
+
+ Master board license state: Normal.
+
+<HW-BRAS>

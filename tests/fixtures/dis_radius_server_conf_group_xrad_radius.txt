@@ -1,0 +1,82 @@
+display radius-server configuration group xrad-radius
+  -------------------------------------------------------
+  Server-group-name    :  xrad-radius
+  Authentication-server:  IP:10.0.0.151 Port:1812 Weight[100] [UP] [MASTER]
+                          Vpn: BR_TECH
+  Authentication-server:  IP:10.0.0.152 Port:1812 Weight[50] [UP]
+                          Vpn: BR_TECH
+  Authentication-server:  IP:10.0.0.153 Port:1812 Weight[0] [UP]
+                          Vpn: BR_TECH
+  Authentication-server:  IP:10.0.0.140 Port:1812 Weight[0] [UP]
+                          Vpn: BR_TECH
+  Authentication-server:  -
+  Authentication-server:  -
+  Authentication-server:  -
+  Authentication-server:  -
+  Authentication-server:  -
+  Authentication-server:  -
+  Authentication-server:  -
+  Authentication-server:  -
+  Authentication-server:  -
+  Authentication-server:  -
+  Authentication-server:  -
+  Authentication-server:  -
+  Accounting-server    :  IP:10.0.0.151 Port:1813 Weight[100] [UP] [MASTER]
+                          Vpn: BR_TECH
+  Accounting-server    :  IP:10.0.0.152 Port:1813 Weight[50] [UP]
+                          Vpn: BR_TECH
+  Accounting-server    :  IP:10.0.0.153 Port:1813 Weight[0] [UP]
+                          Vpn: BR_TECH
+  Accounting-server    :  -
+  Accounting-server    :  -
+  Accounting-server    :  -
+  Accounting-server    :  -
+  Accounting-server    :  -
+  Accounting-server    :  -
+  Accounting-server    :  -
+  Accounting-server    :  -
+  Accounting-server    :  -
+  Accounting-server    :  -
+  Accounting-server    :  -
+  Accounting-server    :  -
+  Accounting-server    :  -
+  Protocol-version     :  radius
+  Shared-secret-key    :  ******
+  Retransmission       :  3
+  Timeout-interval(s)  :  5
+  Acct-Start-Packet Resend  :  NO
+  Acct-Start-Packet Resend-Times  :  0
+  Acct-Stop-Packet Resend  :  NO
+  Acct-Stop-Packet Resend-Times  :  0
+  Traffic-unit         :  B
+  ClassAsCar           :  NO
+  User-name-format     :  Original
+  Option82 parse mode  :  -
+  Attribute-translation:  YES
+  Packet send algorithm:  Master-Backup sequence
+  Tunnel password      :  cipher
+  NAS-Port-ID format   :  vendor 2352
+  Source interface     : LoopBack12
+  Attribute decode-error-policy list: -
+  Attribute-included   :  Class
+  Attribute-included   :  HW-DHCP-OPTION
+  Trust server username:  NO
+  Attach username in ACK:  -
+  Apply user-name user-type  :  IPOE
+  Qos-profile no-exist-policy  :  Offline
+  Calling-station-id include  :  mac
+  Policy-name no-exist-policy  :  Offline
+  Hw-domain-name block policy  :  Online
+  Accounting-merge max-length  :  --
+  Radius-attribute include agent-circuit-id value-added-service  :  FALSE
+  Radius-attribute include agent-remote-id value-added-service  :  FALSE
+  Radius-attribute include hw-avpair haap:tunnel-vpn :  FALSE
+  Radius-attribute include hw-avpair haap:tunnel-destination-ip:  FALSE
+  Radius-attribute include hw-avpair haap:tunnel-update-type:  FALSE
+  Radius-attribute include hw-avpair haap:tunnel-flow-octets:  FALSE
+  Radius-attribute include hw-avpair haap:guid:  FALSE
+  Radius-attribute include hw-avpair haap:toid:  FALSE
+  Acct-Interim-Packet Resend  :  NO
+  Acct-Interim-Packet Resend-Times  :  0
+  Nasport Bypass enable  :0
+  <HW-BRAS>

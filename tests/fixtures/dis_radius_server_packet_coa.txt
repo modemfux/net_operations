@@ -1,0 +1,16 @@
+display radius-server packet ip-address 10.0.0.151 vpn-instance BR_TECH coa
+Total radius server COA packets:
+  Author Requests    : 40333      Author Retransmissions      : 0
+  Author Acks        : 20837      Author Naks                 : 19496
+  Bad Authenticators : 0          Author Malformeds           : 0
+  Invalid Author IP  : 0          Invalid Author Port         : 0
+  Timeouts           : 0          Unknown Types               : 0
+  Packets Dropped    : 0
+Last 30 minutes radius server COA packets:
+  Author Requests    : 12         Author Retransmissions      : 0
+  Author Acks        : 6          Author Naks                 : 6
+  Bad Authenticators : 0          Author Malformeds           : 0
+  Invalid Author IP  : 0          Invalid Author Port         : 0
+  Timeouts           : 0          Unknown Types               : 0
+  Packets Dropped    : 0
+<HW-BRAS>

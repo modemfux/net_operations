@@ -1,0 +1,10 @@
+display authentication-scheme auth_rad
+  ---------------------------------------------------------------------------
+  Authentication-scheme-name   : auth_rad
+  Authentication-method        : RADIUS authentication
+  Authentication-fail-policy    : Cut user
+  Authentication-fail-domain    : -
+  Authentication-redirect-domain: -
+  Hybrid-access-tunnel-ip-authen: Disable
+  ---------------------------------------------------------------------------
+<HW-BRAS>

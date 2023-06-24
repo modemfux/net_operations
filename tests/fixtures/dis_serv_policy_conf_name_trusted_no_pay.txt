@@ -1,0 +1,30 @@
+display service-policy configuration name trusted_no_pay
+  ------------------------------------------------
+  Service-policy-index         : 0
+  Service-policy-name          : trusted_no_pay
+  Service-policy-type          : EDSG
+  Policy-storage-type          : configuration
+  Reference-count              : 223
+  Service-IP-type              : IPv4
+  Service-class-inbound        : -
+  Service-class-outbound       : -
+  Authentication-scheme-name   : default0
+  Accounting-scheme-name       : default0
+  Radius-server-template       : -
+  Service-group-name           : sg_NORMAL
+  Service-group-priority       : 5
+  Inbound-cir                  : 10240(kbps)
+  Inbound-pir                  : -
+  Inbound-cbs                  : 1280000(bytes)
+  Inbound-pbs                  : 1945600(bytes)
+  Outbound-cir                 : 10240(kbps)
+  Outbound-pir                 : -
+  Outbound-cbs                 : 1280000(bytes)
+  Outbound-pbs                 : 1945600(bytes)
+  Prepaid-profile-name         : -
+  Diameter monitor key         : -
+  Inbound-match-usergroup      : no
+  Outbound-match-usergroup     : no
+  Force-redirect-profile-name  : -
+  ------------------------------------------------
+<HW-BRAS>

@@ -1,0 +1,17 @@
+dis service-policy cache
+  ------------------------------------------------------------------------
+  Index       Policy name                          Type        Used num
+  ------------------------------------------------------------------------
+  0           localxrad                            EDSG        6760
+  1           102400xrad                           EDSG        5861
+  2           71680xrad                            EDSG        16
+  3           redirectxrad                         EDSG        151
+  4           nomoneyxrad                          EDSG        133
+  5           dropxrad                             EDSG        151
+  6           512000xrad                           EDSG        328
+  7           1048576xrad                          EDSG        1
+  9           51200xrad                            EDSG        7
+  10          204800xrad                           EDSG        395
+  ------------------------------------------------------------------------
+  Total 10,10 printed
+<HW-BRAS>

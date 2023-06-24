@@ -1,0 +1,12 @@
+display value-added-service policy
+  ------------------------------------------------------------------
+  Index   Service Policy Name               Used Num  Type  User Num
+  ------------------------------------------------------------------
+  0      trusted_no_pay                      220      EDSG    220
+  1      redirect                            241      EDSG    241
+  2      local                               241      EDSG    241
+  3      drop                                241      EDSG    241
+  4      srv_og_social                         0      EDSG    0
+  ------------------------------------------------------------------
+  Total 5,5 printed
+<HW-BRAS>

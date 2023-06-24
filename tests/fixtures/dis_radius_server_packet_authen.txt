@@ -1,0 +1,24 @@
+display radius-server packet ip-address 10.0.0.151 vpn-instance BR_TECH authentication
+Total radius server authentication packets:
+  Access Requests    : 17027350   Access Retransmissions     : 18203
+  Access Accepts     : 10556944   Access Rejects             : 6466427
+  Access Challenges  : 0          Malformed Access Responses : 157
+  Bad Authenticators : 157        Pending Requests           : 0
+  Timeouts           : 268407
+   Speed Limit Block : 0          Pending Limit Block        : 3217
+   Server Down Block : 242554     No Source IP Block         : 0
+   Server Not Reply  : 22792
+  Unknown Types      : 0          Packets Dropped            : 454
+  Cancelled Requests : 6
+Last 30 minutes radius server authentication packets:
+  Access Requests    : 395        Access Retransmissions     : 0
+  Access Accepts     : 395        Access Rejects             : 0
+  Access Challenges  : 0          Malformed Access Responses : 0
+  Bad Authenticators : 0          Pending Requests           : 0
+  Timeouts           : 0
+   Speed Limit Block : 0          Pending Limit Block        : 0
+   Server Down Block : 0          No Source IP Block         : 0
+   Server Not Reply  : 0
+  Unknown Types      : 0          Packets Dropped            : 0
+  Cancelled Requests : 0
+<HW-BRAS>

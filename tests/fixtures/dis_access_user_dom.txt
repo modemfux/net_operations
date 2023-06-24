@@ -1,0 +1,13 @@
+display access-user domain dom_ipoe_main summary
+  Normal users                       : 4
+  RUI Local users                    : 4000
+  RUI Remote users                   : 3855
+  -----------------------------------------------
+  Radius authentication              : 7859
+  Radius proxy authentication        : 0
+  No authentication                  : 0
+  Local authentication               : 0
+  Tacacs authentication              : 0
+  -----------------------------------------------
+  Total users                        : 7859
+<HW-BRAS>

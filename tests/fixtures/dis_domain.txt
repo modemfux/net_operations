@@ -1,0 +1,24 @@
+display domain
+  ------------------------------------------------------------------------------
+  Domain name           State        CAR Access-limit   Online  BODNum RptVSMNum
+  ------------------------------------------------------------------------------
+  default0              Active         0       185344        0       0         0
+  default1              Active         0       185344        0       0         0
+  default_admin         Active         0       185344        1       0         0
+  ipoe                  Active         0       185344        0       0         0
+  business_2m           Active         0       185344        0       0         0
+  ipoe_public_ha        Active         0       185344        0       0         0
+  ipoe_ha               Active         0       185344        0       0         0
+  dom_titan_1           Active         0       185344       27       0        27
+  dom_titan_2           Active         0       185344        0       0         0
+  b2b_test              Active         0       185344        0       0         0
+  ipv6_test             Active         0       185344        0       0         0
+  dom_ipoe_main         Active         0       185344     7860       0      7860
+  b2b_gray              Active         0       185344      117       0       117
+  dom_ipoe_main_public_ha  Active         0       185344        0       0         0
+  dom_b2b_ipoe_main     Active         0       185344        3       0         3
+  ipoe-radius-test      Active         0       185344        0       0         0
+  dom_ipoe_white_no_auth  Active         0       185344       46       0        46
+  ------------------------------------------------------------------------------
+  Total 17,17 printed
+<HW-BRAS>

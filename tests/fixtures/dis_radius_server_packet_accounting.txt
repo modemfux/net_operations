@@ -1,0 +1,22 @@
+display radius-server packet ip-address 10.0.0.151 vpn-instance BR_TECH accounting
+Total radius server accounting packets:
+  Account Requests   : 135145231  Account Retransmissions     : 170189
+  Account Responses  : 135148485  Malformed Account Responses : 369
+  Bad Authenticators : 369        Pending Requests            : 0
+  Timeouts           : 425043
+   Speed Limit Block : 0          Pending Limit Block         : 59120
+   Server Down Block : 197737     No Source IP Block          : 0
+   Server Not Reply  : 168186
+  Unknown Types      : 0          Packets Dropped             : 1251
+  Cancelled Requests : 10
+Last 30 minutes radius server accounting packets:
+  Account Requests   : 4240       Account Retransmissions     : 0
+  Account Responses  : 4240       Malformed Account Responses : 0
+  Bad Authenticators : 0          Pending Requests            : 0
+  Timeouts           : 0
+   Speed Limit Block : 0          Pending Limit Block         : 0
+   Server Down Block : 0          No Source IP Block          : 0
+   Server Not Reply  : 0
+  Unknown Types      : 0          Packets Dropped             : 0
+  Cancelled Requests : 0
+<HW-BRAS>

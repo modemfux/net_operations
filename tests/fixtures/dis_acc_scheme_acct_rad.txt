@@ -1,0 +1,14 @@
+display accounting-scheme acct_rad
+  ---------------------------------------------------------------------------
+  Accounting-scheme-name                : acct_rad
+  Accounting-method                     : RADIUS accounting
+  Realtime-accounting-switch            : Close
+  Realtime-accounting-interval(sec)     : -
+  Start-accounting-fail-policy          : Online(accounting)
+  Realtime-accounting-fail-policy       : Online
+  Realtime-accounting-send-update       : No
+  Realtime-accounting-traffic-update    : No
+  Realtime-accounting-hash              : No
+  Realtime-accounting-failure-retries   : 3
+  ---------------------------------------------------------------------------
+<HW-BRAS>

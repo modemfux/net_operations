@@ -1,0 +1,66 @@
+display value-added-service policy
+  ------------------------------------------------------------------
+  Index   Service Policy Name               Used Num  Type  User Num
+  ------------------------------------------------------------------
+  0      aaa-only                              0       DAA    0
+  1      econom_classic                        0       DAA    0
+  2      local-net                             0       DAA    0
+  3      local_1mbps                          56       DAA    14
+  4      local_20mbps                          0       DAA    0
+  5      local_512kbps                       344       DAA    86
+  6      local_60mbps                          0       DAA    0
+  7      unlim                              1288       DAA    322
+  8      unlim-1g-test                         0       DAA    0
+  9      unlim_10_24mbps                       0       DAA    0
+  10     unlim_10mbps                        404       DAA    101
+  11     unlim_12_24mbps                       0       DAA    0
+  12     unlim_12_36mbps                       0       DAA    0
+  13     unlim_12mbps                          0       DAA    0
+  14     unlim_12mbps_wifi                     0       DAA    0
+  15     unlim_14mbps                          4       DAA    1
+  16     unlim_16_24mbps                       0       DAA    0
+  17     unlim_16_32mbps                       0       DAA    0
+  18     unlim_16_36mbps                       0       DAA    0
+  19     unlim_16mbps                          4       DAA    1
+  20     unlim_18mbps                          0       DAA    0
+  21     unlim_20mbps                        364       DAA    91
+  22     unlim_24_36mbps                       0       DAA    0
+  23     unlim_24_48mbps                       0       DAA    0
+  24     unlim_24mbps                          4       DAA    1
+  25     unlim_2_6mbps                         0       DAA    0
+  26     unlim_2mbps                        1828       DAA    457
+  27     unlim_32_64mbps                       0       DAA    0
+  28     unlim_32mbps                         48       DAA    12
+  29     unlim_36mbps                          0       DAA    0
+  30     unlim_3_6mbps                         0       DAA    0
+  31     unlim_3_9mbps                         0       DAA    0
+  32     unlim_3mbps                          20       DAA    5
+  33     unlim_40mbps                          4       DAA    1
+  34     unlim_48mbps                          0       DAA    0
+  35     unlim_4mbps                           0       DAA    0
+  36     unlim_50_100mbps                      4       DAA    0
+  37     unlim_50mbps                        312       DAA    75
+  38     unlim_5mbps                         140       DAA    35
+  39     unlim_60_100mbps                      0       DAA    0
+  40     unlim_64mbps                          0       DAA    0
+  41     unlim_6mbps                          16       DAA    4
+  42     unlim_70_100mbps                      0       DAA    0
+  43     unlim_7mbps                           0       DAA    0
+  44     unlim_8_16mbps                        0       DAA    0
+  45     unlim_8_24mbps                        0       DAA    0
+  46     unlim_8mbps                           0       DAA    0
+  47     unlim_avangard                       40       DAA    10
+  48     unlim_classic                         0       DAA    0
+  49     unlim_modern                          0       DAA    0
+  50     unlim_30mbps                         16       DAA    4
+  51     unlim_100mbps                     90412       DAA    22597
+  52     unlim_10mbps_noacc                    0       DAA    0
+  53     unlim_1mbps                         268       DAA    67
+  54     unlim_35mbps                          0       DAA    0
+  55     unlim_200mbps                     20892       DAA    5222
+  56     unlim_500mbps                      9860       DAA    2464
+  57     unlim_1000mbps                        0       DAA    0
+  ------------------------------------------------------------------
+  Total 58,58 printed
+
+<HW-BRAS>

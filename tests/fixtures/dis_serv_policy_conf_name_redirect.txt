@@ -1,0 +1,31 @@
+display service-policy configuration name redirect
+  ------------------------------------------------
+  Service-policy-index         : 1
+  Service-policy-name          : redirect
+  Service-policy-type          : EDSG
+  Policy-storage-type          : configuration
+  Reference-count              : 244
+  Service-IP-type              : IPv4
+  Service-class-inbound        : -
+  Service-class-outbound       : -
+  Authentication-scheme-name   : default0
+  Accounting-scheme-name       : default0
+  Radius-server-template       : -
+  Service-group-name           : sg_REDIRECT
+  Service-group-priority       : 20
+  Inbound-cir                  : -
+  Inbound-pir                  : -
+  Inbound-cbs                  : -
+  Inbound-pbs                  : -
+  Outbound-cir                 : -
+  Outbound-pir                 : -
+  Outbound-cbs                 : -
+  Outbound-pbs                 : -
+  Prepaid-profile-name         : -
+  Diameter monitor key         : -
+  Inbound-match-usergroup      : no
+  Outbound-match-usergroup     : no
+  Force-redirect-profile-name  : -
+  ------------------------------------------------
+
+<HW-BRAS>

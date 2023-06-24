@@ -1,0 +1,11 @@
+display service-group configuration
+[service-group brief information]
+Total number : 6
+Service-group                      Is-used
+ SG_SRV_OG_SOCIAL                   yes
+ sg_LOCAL                           yes
+ sg_DROP                            yes
+ sg_NORMAL                          yes
+ sg_INET                            yes
+ sg_REDIRECT                        yes
+<HW-BRAS>
