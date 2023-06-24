@@ -1,7 +1,7 @@
 import sys
 from datetime import datetime
 from net_operations.lib.funcs import generate_from_template
-from net_operations.lib.huawei_funcs import get_report_dict
+from net_operations.lib.huawei.nat_funcs import get_nat_report_dict
 from net_operations.lib.classes.NetOperations import NetOperations
 
 
@@ -16,7 +16,7 @@ def main():
     conn = NetOperations(ip, vendor)
     try:
         conn.establish_connection()
-        report_dic = get_report_dict(conn)
+        report_dic = get_nat_report_dict(conn)
         report_str = generate_from_template('templates/nat_report.jinja2',
                                             report_dic)
         time = str(datetime.now()).replace(' ', '_').replace(':', '.')

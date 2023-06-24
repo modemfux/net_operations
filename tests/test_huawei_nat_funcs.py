@@ -1,11 +1,11 @@
 from tests.dummy_class import DummyConnection
-from net_operations.lib.huawei_funcs import get_huawei_nat_configuration
-from net_operations.lib.huawei_funcs import get_huawei_nat_physical_loc
-from net_operations.lib.huawei_funcs import get_huawei_nat_payload_stats
-from net_operations.lib.huawei_funcs import get_huawei_nat_summary_statistic
-from net_operations.lib.huawei_funcs import get_huawei_nat_session_license
-from net_operations.lib.huawei_funcs import get_huawei_nat_cards
-from net_operations.lib.huawei_funcs import get_report_dict
+from net_operations.lib.huawei.nat_funcs import get_huawei_nat_configuration
+from net_operations.lib.huawei.nat_funcs import get_huawei_nat_physical_loc
+from net_operations.lib.huawei.nat_funcs import get_huawei_nat_payload_stats
+from net_operations.lib.huawei.nat_funcs import get_huawei_nat_summary_statistic
+from net_operations.lib.huawei.nat_funcs import get_huawei_nat_session_license
+from net_operations.lib.huawei.nat_funcs import get_huawei_nat_cards
+from net_operations.lib.huawei.nat_funcs import get_nat_report_dict
 import pytest
 
 
@@ -216,6 +216,6 @@ def fx_normalized_dict():
 
 
 def test_get_report_dict(fx_normalized_dict):
-    test_out = get_report_dict(dummy)
+    test_out = get_nat_report_dict(dummy)
     fx_normalized_dict['report_time'] = test_out['report_time']
     assert fx_normalized_dict == test_out

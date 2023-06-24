@@ -421,7 +421,7 @@ def fullreport_normalizing_summary(bras_dict, summ_dict, phy_dict):
         bras_dict['slots'][slot][name].update(new_summ)
 
 
-def get_report_dict(conn):
+def get_nat_report_dict(conn):
     ip = conn.ip
     report_time = str(datetime.utcnow())
     phys = get_huawei_nat_physical_loc(conn)
