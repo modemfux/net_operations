@@ -1,6 +1,10 @@
 import re
 
 
+def check_hw_value(value, abscence='-'):
+    return value if value != abscence else None
+
+
 def get_huawei_domains(conn):
     domains = {}
     output = conn.send_commands('display domain')
@@ -25,7 +29,7 @@ def get_huawei_domain_info(conn, domain):
     r_tacacs = r'HWTACACS-server-template +: +(\S+)'
     r_ip_pool = r'IP-address-pool-name +: +(\S+)'
     r_nat_ug = r'User-group nat +: +(\S+), +.*'
-    r_nat_inst = r'User-group nat +: +\S+, +(\S+)'
+    r_nat_inst = r'User-group nat +: +\S+, +(\S+),'
     regexps = [
         ("authen_scheme", r_authen_sch),
         ("account_scheme", r_acct_sch),
@@ -41,16 +45,14 @@ def get_huawei_domain_info(conn, domain):
     info_dict = {}
     for key, regexp in regexps:
         reg = re.compile(regexp)
-        if reg.search(output) and reg.search(output).group(1) != '-':
-            info_dict[key] = reg.search(output).group(1)
-        else:
-            info_dict[key] = None
+        if reg.search(output):
+            info_dict[key] = check_hw_value(reg.search(output).group(1))
     reg4 = re.compile(r_dns_ipv4)
     reg6 = re.compile(r_dns_ipv6)
     for dns4 in reg4.finditer(output):
         dns = dns4.group(1)
-        info_dict.setdefault('dns_ipv4', []).append(dns)
+        info_dict.setdefault('dns_ipv4', []).append(check_hw_value(dns))
     for dns6 in reg6.finditer(output):
         dns = dns6.group(1)
-        info_dict.setdefault('dns_ipv6', []).append(dns)
+        info_dict.setdefault('dns_ipv6', []).append(check_hw_value(dns))
     return {domain: info_dict}

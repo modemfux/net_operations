@@ -1,4 +1,4 @@
-dis domain dom_ipoe_main
+display domain dom_ipoe_main
   ------------------------------------------------------------------------------
   Domain-name                     : dom_ipoe_main
   Domain-state                    : Active

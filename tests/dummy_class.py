@@ -17,7 +17,9 @@ class DummyConnection:
             'display nat session-table size': '10',
             'display elabel brief': '11',
             'display current-conf conf license': '12',
-            'display version slot 3': '13'
+            'display version slot 3': '13',
+            'display domain': '14',
+            'display domain dom_ipoe_main': '15'
         }
 
         self.files = {
@@ -34,7 +36,9 @@ class DummyConnection:
             '10': 'tests/fixtures/dis_nat_sess_tab_size.txt',
             '11': 'tests/fixtures/dis_elabel_brief.txt',
             '12': 'tests/fixtures/dis_curr_conf_lic.txt',
-            '13': 'tests/fixtures/dis_ver_sl_3.txt'
+            '13': 'tests/fixtures/dis_ver_sl_3.txt',
+            '14': 'tests/fixtures/dis_domain.txt',
+            '15': 'tests/fixtures/dis_domain_dom_ipoe_main.txt'
         }
 
         self.ip = '127.0.0.1'
