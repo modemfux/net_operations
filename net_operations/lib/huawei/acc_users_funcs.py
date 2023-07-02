@@ -5,7 +5,7 @@ def check_hw_value(value, abscence='-'):
     return value if value != abscence else None
 
 
-def get_huawei_domains(conn):
+def get_huawei_domains(conn) -> dict:
     domains = {}
     output = conn.send_commands('display domain')
     reg = re.compile(r" +(\S+) +\S+ +\d+ +\d+ +(\d+)")
@@ -15,7 +15,7 @@ def get_huawei_domains(conn):
     return domains
 
 
-def get_huawei_domain_info(conn, domain):
+def get_huawei_domain_info(conn, domain) -> dict:
     command = f'display domain {domain}'
     output = conn.send_commands(command)
     r_authen_sch = r'Authentication-scheme-name +: +(\S+)'
@@ -56,3 +56,38 @@ def get_huawei_domain_info(conn, domain):
         dns = dns6.group(1)
         info_dict.setdefault('dns_ipv6', []).append(check_hw_value(dns))
     return {domain: info_dict}
+
+
+def get_huawei_bas_interfaces(conn) -> dict:
+    r_bas_line = r'(\S+) +(\S+) +\S+ +(\d+)'
+    bas_intf_dict = {}
+    output = conn.send_commands('display bas-interface')
+    for item in re.finditer(r_bas_line, output):
+        bas, type_, online = item.groups()
+        bas_intf_dict.update({bas: {'type': type_, 'online': online}})
+    return bas_intf_dict
+
+
+def get_huawei_bas_intf_info(conn, bas_intf) -> dict:
+    r_preauth = r'Pre-authentication default domain +: +(\S+)'
+    r_authen = r'Authentication default domain +: +(\S+)'
+    r_authen_method = r'Authentication method +: +\[(\S+)\]'
+    r_opt82 = r'Client option82 +: +(\S+)'
+    r_vrf = r'Vpn Instance +: +(\S+)'
+    basif_list = [
+        (r_preauth, 'preauth_domain', None),
+        (r_authen, 'authen_domain', None),
+        (r_authen_method, 'authen_method', None),
+        (r_opt82, 'opt82', None),
+        (r_vrf, 'vrf', None),
+    ]
+    command = f'display bas-interface {bas_intf}'
+    output = conn.send_commands(command)
+    info_dict = {}
+    for regexp, key, default in basif_list:
+        searched = re.search(regexp, output)
+        if searched:
+            info_dict[key] = check_hw_value(searched.group(1))
+        else:
+            info_dict[key] = default
+    return {bas_intf: info_dict}

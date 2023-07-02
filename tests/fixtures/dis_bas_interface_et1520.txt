@@ -1,4 +1,4 @@
-dis bas-interface Eth-Trunk1.520
+display bas-interface Eth-Trunk1.520
 
   Access type                                  : Layer2-subscriber
   BASIF state                                  : Updated

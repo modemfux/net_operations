@@ -1,4 +1,4 @@
-dis bas-interface
+display bas-interface
 
   ---------------------------------------------------------------------------
    Interface                BASIF-access-type       config-state   access-number

@@ -19,7 +19,9 @@ class DummyConnection:
             'display current-conf conf license': '12',
             'display version slot 3': '13',
             'display domain': '14',
-            'display domain dom_ipoe_main': '15'
+            'display domain dom_ipoe_main': '15',
+            'display bas-interface': '16',
+            'display bas-interface Eth-Trunk1.520': '17'
         }
 
         self.files = {
@@ -38,7 +40,9 @@ class DummyConnection:
             '12': 'tests/fixtures/dis_curr_conf_lic.txt',
             '13': 'tests/fixtures/dis_ver_sl_3.txt',
             '14': 'tests/fixtures/dis_domain.txt',
-            '15': 'tests/fixtures/dis_domain_dom_ipoe_main.txt'
+            '15': 'tests/fixtures/dis_domain_dom_ipoe_main.txt',
+            '16': 'tests/fixtures/dis_bas_interface.txt',
+            '17': 'tests/fixtures/dis_bas_interface_et1520.txt'
         }
 
         self.ip = '127.0.0.1'
