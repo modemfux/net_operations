@@ -91,3 +91,45 @@ def get_huawei_bas_intf_info(conn, bas_intf) -> dict:
         else:
             info_dict[key] = default
     return {bas_intf: info_dict}
+
+
+def get_huawei_radius_gr_info(conn, rsg_name) -> dict:
+    r_authen_srv = (r"Authentication-server *: +"
+                    r"IP:(\S+) +Port: *(\S+) +Weight\[(\d+)\].*\n"
+                    r"(?: +Vpn: +(\S+))*")
+    r_account_srv = (r"Accounting-server *: +"
+                     r"IP:(\S+) +Port: *(\S+) +Weight\[(\d+)\].*\n"
+                     r"(?: +Vpn: +(\S+))*")
+    r_src_intf = r"Source interface +: +(\S+)"
+    r_csi = r"Calling-station-id include +: +(\S+)"
+    command = f"display radius-server configuration group {rsg_name}"
+    output = conn.send_commands(command)
+    rad_conf = {
+        "authen_servers": [],
+        "account_servers": [],
+        "src_interface": None,
+        "call_station_id": None
+    }
+    iterable_keys = [("authen_servers", r_authen_srv),
+                     ("account_servers", r_account_srv)]
+    noniter_keys = [("src_interface", r_src_intf),
+                    ("call_station_id", r_csi)]
+    for key, regexp in iterable_keys:
+        reg = re.compile(regexp)
+        for group in reg.finditer(output):
+            ip, port, weight, vrf = group.groups()
+            srv_dict = {
+                "ip": ip,
+                "port": port,
+                "weight": weight,
+                "vrf": vrf
+            }
+            rad_conf[key].append(srv_dict)
+    for key, regexp in noniter_keys:
+        searched = re.search(regexp, output)
+        if searched:
+            res = check_hw_value(searched.group(1))
+        else:
+            res = None
+        rad_conf[key] = res
+    return rad_conf

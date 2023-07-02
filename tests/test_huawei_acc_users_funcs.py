@@ -4,6 +4,7 @@ from net_operations.lib.huawei.acc_users_funcs import get_huawei_domains
 from net_operations.lib.huawei.acc_users_funcs import get_huawei_domain_info
 from net_operations.lib.huawei.acc_users_funcs import get_huawei_bas_interfaces
 from net_operations.lib.huawei.acc_users_funcs import get_huawei_bas_intf_info
+from net_operations.lib.huawei.acc_users_funcs import get_huawei_radius_gr_info
 
 
 dummy = DummyConnection()
@@ -240,3 +241,50 @@ def test_get_huawei_bas_intf_info(fx_huawei_bas_intf_info):
     fx_interface, fx_info = fx_huawei_bas_intf_info
     info = get_huawei_bas_intf_info(dummy, fx_interface)
     assert fx_info == info
+
+
+@pytest.fixture
+def fx_radius_conf_group():
+    rad_conf = {
+        "authen_servers": [
+            {"ip": "10.0.0.151",
+             "port": "1812",
+             "weight": "100",
+             "vrf": "BR_TECH"},
+            {"ip": "10.0.0.152",
+             "port": "1812",
+             "weight": "50",
+             "vrf": "BR_TECH"},
+            {"ip": "10.0.0.153",
+             "port": "1812",
+             "weight": "0",
+             "vrf": "BR_TECH"},
+            {"ip": "10.0.0.140",
+             "port": "1812",
+             "weight": "0",
+             "vrf": "BR_TECH"}
+        ],
+        "account_servers": [
+            {"ip": "10.0.0.151",
+             "port": "1813",
+             "weight": "100",
+             "vrf": "BR_TECH"},
+            {"ip": "10.0.0.152",
+             "port": "1813",
+             "weight": "50",
+             "vrf": "BR_TECH"},
+            {"ip": "10.0.0.153",
+             "port": "1813",
+             "weight": "0",
+             "vrf": "BR_TECH"}
+        ],
+        "src_interface": "LoopBack12",
+        "call_station_id": "mac"
+    }
+    return "xrad-radius", rad_conf
+
+
+def test_get_huawei_radius_gr_info(fx_radius_conf_group):
+    fx_rsg_name, fx_result = fx_radius_conf_group
+    result = get_huawei_radius_gr_info(dummy, fx_rsg_name)
+    assert fx_result == result
