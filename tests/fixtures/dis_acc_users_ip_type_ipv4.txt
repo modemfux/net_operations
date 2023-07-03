@@ -1,0 +1,13 @@
+display access-user ip-type ipv4 summary
+  Normal users                       : 4
+  RUI Local users                    : 4245
+  RUI Remote users                   : 3835
+  -----------------------------------------------
+  Radius authentication              : 7739
+  Radius proxy authentication        : 0
+  No authentication                  : 345
+  Local authentication               : 0
+  Tacacs authentication              : 0
+  -----------------------------------------------
+  Total users                        : 8084
+<HW-BRAS>
