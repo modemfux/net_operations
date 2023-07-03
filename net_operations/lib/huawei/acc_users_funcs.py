@@ -169,3 +169,38 @@ def get_huawei_total_users(conn):
             if searched:
                 users_dict[ip_type].update(searched.groupdict())
     return users_dict
+
+
+def get_hw_intf_with_statics(conn, with_output=True):
+    r_intf = r"(\S+) +\d\S+ +\S+ +\S+ +\S+"
+    output = conn.send_commands("display static-user")
+    reg = re.compile(r_intf)
+    intf = list({intf.group(1) for intf in reg.finditer(output)})
+    return intf, output if with_output else intf
+
+
+def get_hw_static_users(conn):
+    interfaces, output = get_hw_intf_with_statics(conn)
+    users_dict = {intf: [] for intf in interfaces}
+    for intf in interfaces:
+        r_values = fr"{intf} +(\d\S+) +(\S+) +(\S+) +(\S+)\n +(\S+).*\n +(\S+)"
+        reg = re.compile(r_values)
+        for item in reg.finditer(output):
+            vlans, ipv4_add, mac, vrf, ipv6_add, ipv6_pref = map(check_hw_value,
+                                                                 item.groups())
+            if "/" in vlans:
+                s_vlan, c_vlan = vlans.split("/")
+            else:
+                s_vlan = vlans
+                c_vlan = None
+            dict_upd = {
+                "ipv4_address": ipv4_add,
+                "s_vlan": s_vlan,
+                "c_vlan": c_vlan,
+                "mac": mac,
+                "vrf": vrf,
+                "ipv6_address": ipv6_add,
+                "ipv6_delegated_prefix": ipv6_pref
+                }
+            users_dict[intf].append(dict_upd)
+    return users_dict
