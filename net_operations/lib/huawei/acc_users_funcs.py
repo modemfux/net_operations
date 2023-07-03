@@ -133,3 +133,39 @@ def get_huawei_radius_gr_info(conn, rsg_name) -> dict:
             res = None
         rad_conf[key] = res
     return rad_conf
+
+
+def get_huawei_total_users(conn):
+    r_normal = r"Normal users +: *(?P<normal>\d+)"
+    r_rui_loc = r"RUI Local users +: *(?P<rui_local>\d+)"
+    r_rui_rem = r"RUI Remote users +: *(?P<rui_remote>\d+)"
+    r_radius = r"Radius authentication +: *(?P<radius_auth>\d+)"
+    r_noauth = r"No authentication +: *(?P<no_auth>\d+)"
+    r_total = r"Total users +: *(?P<total>\d+)"
+    values = [r_normal, r_rui_loc, r_rui_rem, r_radius, r_noauth, r_total]
+    users_dict = {
+        "ipv4": {
+            "normal": None,
+            "rui_local": None,
+            "rui_remote": None,
+            "radius_auth": None,
+            "no_auth": None,
+            "total": None
+        },
+        "ipv6": {
+            "normal": None,
+            "rui_local": None,
+            "rui_remote": None,
+            "radius_auth": None,
+            "no_auth": None,
+            "total": None
+        },
+    }
+    for ip_type in users_dict.keys():
+        command = f"display access-user ip-type {ip_type} summary"
+        output = conn.send_commands(command)
+        for regexp in values:
+            searched = re.search(regexp, output)
+            if searched:
+                users_dict[ip_type].update(searched.groupdict())
+    return users_dict
