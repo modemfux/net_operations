@@ -1,0 +1,3 @@
+display access-user ip-type ipv6 summary
+Info: No online user!
+<HW-BRAS>
