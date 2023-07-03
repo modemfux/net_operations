@@ -179,6 +179,23 @@ def get_hw_intf_with_statics(conn, with_output=True):
     return intf, output if with_output else intf
 
 
+def get_hw_static_user_verbose(conn, ip_address, ip_type="ipv4"):
+    types = {"ipv4": "ip-address", "ipv6": "ipv6-address"}
+    command = f"display static-user {types[ip_type]} {ip_address}"
+    output = conn.send_commands(command)
+    r_domain = r"Static user domain +: *(\S+)"
+    r_gateway = r"Static user Gateway +: *(\S+)"
+    pairs = (r_domain, "domain"), (r_gateway, "gateway")
+    ver_dict = {}
+    for regexp, key in pairs:
+        searched = re.search(regexp, output)
+        if searched:
+            ver_dict[key] = check_hw_value(searched.group(1))
+        else:
+            ver_dict[key] = None
+    return ver_dict
+
+
 def get_hw_static_users(conn):
     interfaces, output = get_hw_intf_with_statics(conn)
     users_dict = {intf: [] for intf in interfaces}
@@ -202,5 +219,7 @@ def get_hw_static_users(conn):
                 "ipv6_address": ipv6_add,
                 "ipv6_delegated_prefix": ipv6_pref
                 }
+            ver_dict = get_hw_static_user_verbose(conn, ipv4_add)
+            dict_upd.update(ver_dict)
             users_dict[intf].append(dict_upd)
     return users_dict
