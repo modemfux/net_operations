@@ -22,7 +22,10 @@ class DummyConnection:
             'display domain dom_ipoe_main': '15',
             'display bas-interface': '16',
             'display bas-interface Eth-Trunk1.520': '17',
-            'display radius-server configuration group xrad-radius': '18'
+            'display radius-server configuration group xrad-radius': '18',
+            'display access-user ip-type ipv4 summary': '19',
+            'display access-user ip-type ipv6 summary': '20',
+            'display static-user': '21'
         }
 
         self.files = {
@@ -45,6 +48,9 @@ class DummyConnection:
             '16': 'tests/fixtures/dis_bas_interface.txt',
             '17': 'tests/fixtures/dis_bas_interface_et1520.txt',
             '18': 'tests/fixtures/dis_radius_server_conf_group_xrad_radius.txt',
+            '19': 'tests/fixtures/dis_acc_users_ip_type_ipv4.txt',
+            '20': 'tests/fixtures/dis_acc_users_ip_type_ipv6.txt',
+            '21': 'tests/fixtures/dis_static_user.txt'
         }
 
         self.ip = '127.0.0.1'

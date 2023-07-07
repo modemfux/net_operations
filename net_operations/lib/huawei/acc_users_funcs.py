@@ -127,10 +127,9 @@ def get_huawei_radius_gr_info(conn, rsg_name) -> dict:
             rad_conf[key].append(srv_dict)
     for key, regexp in noniter_keys:
         searched = re.search(regexp, output)
+        res = None
         if searched:
             res = check_hw_value(searched.group(1))
-        else:
-            res = None
         rad_conf[key] = res
     return rad_conf
 
@@ -176,7 +175,7 @@ def get_hw_intf_with_statics(conn, with_output=True):
     output = conn.send_commands("display static-user")
     reg = re.compile(r_intf)
     intf = list({intf.group(1) for intf in reg.finditer(output)})
-    return intf, output if with_output else intf
+    return (intf, output) if with_output else intf
 
 
 def get_hw_static_user_verbose(conn, ip_address, ip_type="ipv4"):

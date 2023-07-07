@@ -5,6 +5,8 @@ from net_operations.lib.huawei.acc_users_funcs import get_huawei_domain_info
 from net_operations.lib.huawei.acc_users_funcs import get_huawei_bas_interfaces
 from net_operations.lib.huawei.acc_users_funcs import get_huawei_bas_intf_info
 from net_operations.lib.huawei.acc_users_funcs import get_huawei_radius_gr_info
+from net_operations.lib.huawei.acc_users_funcs import get_huawei_total_users
+from net_operations.lib.huawei.acc_users_funcs import get_hw_intf_with_statics
 
 
 dummy = DummyConnection()
@@ -288,3 +290,47 @@ def test_get_huawei_radius_gr_info(fx_radius_conf_group):
     fx_rsg_name, fx_result = fx_radius_conf_group
     result = get_huawei_radius_gr_info(dummy, fx_rsg_name)
     assert fx_result == result
+
+
+@pytest.fixture
+def fx_acc_user_ip_type():
+    users_dict = {
+        "ipv4": {
+            "normal": "4",
+            "rui_local": "4245",
+            "rui_remote": "3835",
+            "radius_auth": "7739",
+            "no_auth": "345",
+            "total": "8084"
+        },
+        "ipv6": {
+            "normal": None,
+            "rui_local": None,
+            "rui_remote": None,
+            "radius_auth": None,
+            "no_auth": None,
+            "total": None
+        },
+    }
+    return users_dict
+
+
+def test_get_huawei_total_users(fx_acc_user_ip_type):
+    result = get_huawei_total_users(dummy)
+    assert fx_acc_user_ip_type == result
+
+
+@pytest.fixture
+def fx_intf_with_statics():
+    fx_intfs = ["Eth-Trunk1.3652", "Eth-Trunk1.3653"]
+    with open('tests/fixtures/dis_static_user.txt') as src:
+        fx_output = src.read()
+    return fx_intfs, fx_output
+
+
+def test_get_hw_intf_with_statics(fx_intf_with_statics):
+    fx_intfs, _ = fx_intf_with_statics
+    result = get_hw_intf_with_statics(dummy, with_output=False)
+    assert fx_intfs == result
+    result = get_hw_intf_with_statics(dummy, with_output=True)
+    assert fx_intf_with_statics == result
