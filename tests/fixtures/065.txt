@@ -1,0 +1,18 @@
+display remote-backup-profile b2b_test_gray
+ -----------------------------------------------
+ Profile-Index        : 0x1004
+ Profile-Name         : b2b_test_gray
+ Service              : bras
+ Remote-backup-service: rbs_main
+ Backup-ID            : 4
+ track protocol       : --
+ Interface            :
+ Forwarding Configured: Slave Forwarding
+ Backup mode          : hot
+ Slot-Number          : --
+ Card-Number          : --
+ Port-Number          : --
+ Traffic threshold    : 50(MB)
+ Traffic interval     : 10(minutes)
+
+<HW-BRAS>

@@ -1,0 +1,35 @@
+display device 1
+ slot1's detail information:
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+  Description:Flexible Card Line Processing Unit(LPUF-51,2 sub-slots) E
+  Board status:                           Normal
+  Register:                               Registered
+  Uptime:                                 2017/12/12    15:21:54
+  CPU Utilization(%):                     25%
+  Mem Usage(%):                           21%
+Clock information:
+  State item                              State
+  Current syn-clock:                      4
+  Current line-clock:                     6
+  Syn-clock state:                        Locked     VCXO_OK    REF_OK
+  Syn-clock 4 state:                      Actived
+  Syn-clock 5 state:                      Actived
+  Line-clock 6 state:                     Actived
+  Line-clock 7 state:                     Actived
+Statistic information:
+  Statistic item                          Statistic number
+  SERDES interface link lost:             0
+  MPU switches:                           0
+  Syn-clock switches:                     0
+  Line-clock switches:                    0
+PIC1:CR5D0L2XFE70 information:
+  Description:2-Port 10GBase LAN/WAN-SFP+ Flexible Card E(P51-E)
+  Uptime:                                 2017/12/12    15:22:16
+  Card type:                              ETHERNET
+  Port number:                            2
+  Converge info:                          non-converge
+Configure license items:
+  NULL
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+<HW-BRAS>

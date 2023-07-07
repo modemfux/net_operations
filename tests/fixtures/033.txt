@@ -1,0 +1,35 @@
+display device 2
+ slot2's detail information:
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+  Description:Flexible Card Line Processing Unit(LPUF-40,2 sub-slots) B
+  Board status:                           Normal
+  Register:                               Registered
+  Uptime:                                 2022/12/16    01:11:20
+  CPU Utilization(%):                     14%
+  Mem Usage(%):                           39%
+Clock information:
+  State item                              State
+  Current syn-clock:                      4
+  Current line-clock:                     6
+  Syn-clock state:                        Locked     VCXO_OK    REF_OK
+  Syn-clock 4 state:                      Actived
+  Syn-clock 5 state:                      Actived
+  Line-clock 6 state:                     Actived
+  Line-clock 7 state:                     Actived
+Statistic information:
+  Statistic item                          Statistic number
+  SERDES interface link lost:             0
+  MPU switches:                           0
+  Syn-clock switches:                     0
+  Line-clock switches:                    0
+PIC1:CR5M00L2XX20 information:
+  Description:2-Port 10GBase LAN/WAN-XFP Flexible Card(P40)
+  Uptime:                                 2022/12/16    01:11:34
+  Card type:                              ETHERNET
+  Port number:                            2
+  Converge info:                          non-converge
+Configure license items:
+  LPUF-40-B Upgrade to LPUF-40-A  License
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+<HW-BRAS>

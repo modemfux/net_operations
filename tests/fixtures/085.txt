@@ -1,0 +1,11 @@
+display ip vpn-instance
+ Total VPN-Instances configured      : 4
+ Total IPv4 VPN-Instances configured : 4
+ Total IPv6 VPN-Instances configured : 0
+
+  VPN-Instance Name               RD                    Address-family
+  BR_CORE_OAM                     11.95.140.64:10       IPv4
+  BR_OAM                          39811:2               IPv4
+  BR_TECH                         39811:1               IPv4
+  NETFLOW                         39811:3               IPv4
+<HW-BRAS>

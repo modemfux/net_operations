@@ -1,0 +1,91 @@
+File	Command
+000.txt	display nat instance
+001.txt	display nat instance ni_main
+002.txt	display nat instance ni_b2b_main
+003.txt	display service-location
+004.txt	display service-location 1
+005.txt	display service-instance-group
+006.txt	display service-instance-group sig_main
+007.txt	display nat statistics payload
+008.txt	display nat statistics table slot 3 engine 0
+009.txt	display license resource usage
+010.txt	display nat session-table size
+011.txt	display elabel brief
+012.txt	display current-conf conf license
+013.txt	display version slot 3
+014.txt	display domain
+015.txt	display domain dom_ipoe_main
+016.txt	display bas-interface
+017.txt	display bas-interface Eth-Trunk1.520
+018.txt	display radius-server configuration group xrad-radius
+019.txt	display access-user ip-type ipv4 summary
+020.txt	display access-user ip-type ipv6 summary
+021.txt	display static-user
+022.txt	display version
+023.txt	display accounting-scheme acct_rad
+024.txt	display access-user domain dom_ipoe_main summary
+025.txt	display authentication-scheme auth_rad
+026.txt	display cpu-usage sorted
+027.txt	display cpu-usage sorted slave
+028.txt	display cpu-usage slot 1
+029.txt	display cpu-usage slot 2
+030.txt	display cpu-usage slot 3
+031.txt	display cur conf user-interface
+032.txt	display device 1
+033.txt	display device 2
+034.txt	display device 3
+035.txt	display device 4
+036.txt	display device 5
+037.txt	display device 6
+038.txt	display device 7
+039.txt	display device 8
+040.txt	display device 9
+041.txt	display device 10
+042.txt	display elabel optical-module brief
+043.txt	display esn
+044.txt	display eth-trunk
+045.txt	display eth-trunk sub-interface
+046.txt	display interface Eth-Trunk1
+047.txt	display interface Eth-Trunk2
+048.txt	display interface GigabitEthernet2/1/0
+049.txt	display interface GigabitEthernet1/1/0
+050.txt	display interface GigabitEthernet1/1/1
+051.txt	display interface GigabitEthernet2/1/1
+052.txt	display license
+053.txt	display license esn
+054.txt	display lldp neighbor brief
+055.txt	display lldp neighbor interface GigabitEthernet1/1/0
+056.txt	display lldp neighbor interface GigabitEthernet1/1/1
+057.txt	display lldp neighbor interface GigabitEthernet2/1/0
+058.txt	display lldp neighbor interface GigabitEthernet2/1/1
+059.txt	display memory-usage
+060.txt	display memory-usage slave
+061.txt	display radius-server packet ip-address 10.0.0.151 vpn-instance BR_TECH accounting
+062.txt	display radius-server packet ip-address 10.0.0.151 vpn-instance BR_TECH authentication
+063.txt	display radius-server packet ip-address 10.0.0.151 vpn-instance BR_TECH coa
+064.txt	display remote-backup-profile
+065.txt	display remote-backup-profile b2b_test_gray
+066.txt	display remote-backup-profile rbp_b2b
+067.txt	display remote-backup-profile rbp_main
+068.txt	display remote-backup-profile rbp_vlan4054
+069.txt	display remote-backup-service
+070.txt	display remote-backup-service rbs_main
+071.txt	display saved-configuration configuration
+072.txt	display service-policy cache
+073.txt	display service-policy cache (Without cached policies)
+074.txt	display service-policy configuration name redirect
+075.txt	display service-policy configuration name trusted_no_pay
+076.txt	display service-group configuration
+077.txt	display ssh server status
+078.txt	display static-user ip-address 203.0.113.110
+079.txt	display static-user ip-address 203.0.113.195
+080.txt	display static-user ip-address 203.0.113.196
+081.txt	display telnet server status
+082.txt	display value-added-service policy
+083.txt	display value-added-service policy unlim_24_36mbps
+084.txt	display value-added-service policy redirect
+085.txt	display ip vpn-instance
+086.txt	display ip vpn-instance BR_CORE_OAM interface
+087.txt	display ip vpn-instance BR_OAM interface
+088.txt	display ip vpn-instance BR_TECH interface
+089.txt	display ip vpn-instance NETFLOW interface

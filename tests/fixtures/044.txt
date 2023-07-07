@@ -1,0 +1,38 @@
+display eth-trunk
+Eth-Trunk1's state information is:
+Local:
+LAG ID: 1                   WorkingMode: STATIC
+Preempt Delay: Disabled     Hash arithmetic: According to flow
+System Priority: 32768      System ID: f098-38a8-e3f0
+Least Active-linknumber: 1  Max Active-linknumber: 16
+Operate status: up          Number Of Up Port In Trunk: 2
+--------------------------------------------------------------------------------
+ActorPortName          Status   PortType PortPri PortNo PortKey PortState Weight
+GigabitEthernet1/1/0   Selected 10GE     32768   1      321     10111100  1
+GigabitEthernet1/1/1   Selected 10GE     32768   4      321     10111100  1
+
+Partner:
+--------------------------------------------------------------------------------
+ActorPortName          SysPri   SystemID        PortPri PortNo PortKey PortState
+GigabitEthernet1/1/0   32768    dcef-80f5-6361  32768   6      833     10111100
+GigabitEthernet1/1/1   32768    dcef-80f5-6361  32768   15     833     10111100
+
+Eth-Trunk2's state information is:
+Local:
+LAG ID: 2                   WorkingMode: STATIC
+Preempt Delay: Disabled     Hash arithmetic: According to flow
+System Priority: 32768      System ID: f098-38a8-e3f0
+Least Active-linknumber: 1  Max Active-linknumber: 16
+Operate status: up          Number Of Up Port In Trunk: 2
+--------------------------------------------------------------------------------
+ActorPortName          Status   PortType PortPri PortNo PortKey PortState Weight
+GigabitEthernet2/1/1   Selected 10GE     32768   2      577     10111100  1
+GigabitEthernet2/1/0   Selected 10GE     32768   3      577     10111100  1
+
+Partner:
+--------------------------------------------------------------------------------
+ActorPortName          SysPri   SystemID        PortPri PortNo PortKey PortState
+GigabitEthernet2/1/1   32768    f098-38a8-e3e4  32768   2      577     10111100
+GigabitEthernet2/1/0   32768    f098-38a8-e3e4  32768   3      577     10111100
+
+<HW-BRAS>

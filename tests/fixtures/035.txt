@@ -1,0 +1,64 @@
+display device 4
+Mpu 4's detail information:
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Date of slot 4 is reset: 2017-12-12
+Time of slot 4 is reset: 15:11:05
+Sequence of event occur: 2
+Reason is: Board reset by VRP command or net manager
+Date of slot 4 is reset: 2017-01-09
+Time of slot 4 is reset: 11:31:12
+Sequence of event occur: 1
+Reason is:VRP reset selfboard because of cmd from sys-master
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Date of slot 5 is reset: 2017-12-12
+Time of slot 5 is reset: 15:11:02
+Sequence of event occur: 7
+Reason is: Board reset by VRP command or net manager
+Date of slot 5 is reset: 2016-12-28
+Time of slot 5 is reset: 13:32:30
+Sequence of event occur: 6
+Reason is: Board reset by VRP command or net manager
+Date of slot 5 is reset: 2016-12-28
+Time of slot 5 is reset: 12:53:48
+Sequence of event occur: 5
+Reason is: Board reset by VRP command or net manager
+Date of slot 5 is reset: 2016-12-28
+Time of slot 5 is reset: 12:15:06
+Sequence of event occur: 4
+Reason is: Board reset by VRP command or net manager
+Date of slot 5 is reset: 2016-12-28
+Time of slot 5 is reset: 11:36:25
+Sequence of event occur: 3
+Reason is: Board reset by VRP command or net manager
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Date of slot 6 is reset: 2017-12-12
+Time of slot 6 is reset: 15:11:05
+Sequence of event occur: 2
+Reason is:CLK reset with MPU
+Date of slot 6 is reset: 2017-01-09
+Time of slot 6 is reset: 11:31:12
+Sequence of event occur: 1
+Reason is:CLK reset with MPU
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Date of slot 7 is reset: 2017-12-12
+Time of slot 7 is reset: 15:11:02
+Sequence of event occur: 7
+Reason is:CLK reset with MPU
+Date of slot 7 is reset: 2016-12-28
+Time of slot 7 is reset: 13:32:30
+Sequence of event occur: 6
+Reason is:CLK reset with MPU
+Date of slot 7 is reset: 2016-12-28
+Time of slot 7 is reset: 12:53:48
+Sequence of event occur: 5
+Reason is:CLK reset with MPU
+Date of slot 7 is reset: 2016-12-28
+Time of slot 7 is reset: 12:15:06
+Sequence of event occur: 4
+Reason is:CLK reset with MPU
+Date of slot 7 is reset: 2016-12-28
+Time of slot 7 is reset: 11:36:25
+Sequence of event occur: 3
+Reason is:CLK reset with MPU
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+<HW-BRAS>

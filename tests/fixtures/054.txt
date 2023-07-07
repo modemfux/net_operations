@@ -1,0 +1,8 @@
+display lldp neighbor brief
+Local Intf              Neighbor Dev         Neighbor Intf        Exptime (sec)
+-------------------------------------------------------------------------------
+GigabitEthernet1/1/0    MBH_03_001_4         GigabitEthernet3/0/2            97
+GigabitEthernet1/1/1    MBH_03_001_4         GigabitEthernet7/0/2            90
+GigabitEthernet2/1/0    BUR-HW2              GigabitEthernet2/1/0           105
+GigabitEthernet2/1/1    BUR-HW2              GigabitEthernet2/1/1           119
+<HW-BRAS>

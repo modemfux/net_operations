@@ -1,0 +1,9 @@
+display device 10
+Present   :PRESENT
+Status    :NORMAL
+Cable     :PLUG
+Register  :REGISTER
+Work      :WORK
+FanSpeed  : [No.]Speed
+  [1] 50%  [2] 50%
+<HW-BRAS>

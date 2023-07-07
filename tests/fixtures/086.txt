@@ -1,0 +1,8 @@
+display ip vpn-instance BR_CORE_OAM interface
+ VPN-Instance Name and ID : BR_CORE_OAM, 4
+  Interface Number : 3
+  Interface list : LoopBack0,
+                   Eth-Trunk1.10,
+                   Eth-Trunk2.10
+
+<HW-BRAS>

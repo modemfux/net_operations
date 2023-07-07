@@ -1,0 +1,17 @@
+display static-user ip-address 203.0.113.110
+
+  Interface                :    Eth-Trunk1.5783003
+  VLAN ID                  :    578/3003
+  Static user IP address   :    203.0.113.110
+  Static user Gateway      :    203.0.113.1
+  Static user description  :    -
+  Static user MAC address  :    -
+  Static user domain       :    dom_ipoe_white_no_auth
+  Initiative detect        :    On
+  Export the route         :    On
+  Static user status       :    Detecting
+  Vpn Instance             :    -
+  Keep Online              :    No
+  Detcet slot              :    1
+  Detect status            :    ARP
+<HW-BRAS>

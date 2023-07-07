@@ -1,0 +1,161 @@
+display remote-backup-profile rbp_b2b
+ -----------------------------------------------
+ Profile-Index        : 0x1002
+ Profile-Name         : rbp_b2b
+ Service              : bras
+ Remote-backup-service: rbs_main
+ Backup-ID            : 2
+ track protocol       : VRRP
+ VRRP-ID              : 1
+ VRRP-Interface       : Eth-Trunk1.588
+ Access-Control       : --
+ State                : Master
+ Peer State           : Slave
+ Interface            :
+                        Eth-Trunk1.3649
+                        Eth-Trunk1.3946
+                        Eth-Trunk1.5413858
+                        Eth-Trunk1.3959
+                        Eth-Trunk1.3719
+                        Eth-Trunk1.5413817
+                        Eth-Trunk1.5413010
+                        Eth-Trunk1.3648
+                        Eth-Trunk1.3628
+                        Eth-Trunk1.3602
+                        Eth-Trunk1.3634
+                        Eth-Trunk1.3733
+                        Eth-Trunk1.3897
+                        Eth-Trunk1.3752
+                        Eth-Trunk1.3889
+                        Eth-Trunk1.3692
+                        Eth-Trunk1.3658
+                        Eth-Trunk1.3747
+                        Eth-Trunk1.3689
+                        Eth-Trunk1.3813
+                        Eth-Trunk1.4056
+                        Eth-Trunk1.3755
+                        Eth-Trunk1.3702
+                        Eth-Trunk1.3722
+                        Eth-Trunk1.3720
+                        Eth-Trunk1.3971
+                        Eth-Trunk1.3879
+                        Eth-Trunk1.3764
+                        Eth-Trunk1.3963
+                        Eth-Trunk1.3731
+                        Eth-Trunk1.3668
+                        Eth-Trunk1.3667
+                        Eth-Trunk1.3862
+                        Eth-Trunk1.4019
+                        Eth-Trunk1.3757
+                        Eth-Trunk1.3671
+                        Eth-Trunk1.3682
+                        Eth-Trunk1.3629
+                        Eth-Trunk1.3664
+                        Eth-Trunk1.3926
+                        Eth-Trunk1.3647
+                        Eth-Trunk1.3727
+                        Eth-Trunk1.3663
+                        Eth-Trunk1.3644
+                        Eth-Trunk1.3641
+                        Eth-Trunk1.3760
+                        Eth-Trunk1.3781
+                        Eth-Trunk1.3851
+                        Eth-Trunk1.3643
+                        Eth-Trunk1.3642
+                        Eth-Trunk1.3820
+                        Eth-Trunk1.3735
+                        Eth-Trunk1.3841
+                        Eth-Trunk1.4042
+                        Eth-Trunk1.3734
+                        Eth-Trunk1.4051
+                        Eth-Trunk1.3831
+                        Eth-Trunk1.3829
+                        Eth-Trunk1.3864
+                        Eth-Trunk1.3714
+                        Eth-Trunk1.3821
+                        Eth-Trunk1.3819
+                        Eth-Trunk1.4049
+                        Eth-Trunk1.3825
+                        Eth-Trunk1.3680
+                        Eth-Trunk1.3744
+                        Eth-Trunk1.3969
+                        Eth-Trunk1.3893
+                        Eth-Trunk1.3924
+                        Eth-Trunk1.3806
+                        Eth-Trunk1.3638
+                        Eth-Trunk1.3681
+                        Eth-Trunk1.3657
+                        Eth-Trunk1.3679
+                        Eth-Trunk1.3200
+                        Eth-Trunk1.3791
+                        Eth-Trunk1.3710
+                        Eth-Trunk1.3713
+                        Eth-Trunk1.3636
+                        Eth-Trunk1.3779
+                        Eth-Trunk1.3739
+                        Eth-Trunk1.3635
+                        Eth-Trunk1.3798
+                        Eth-Trunk1.3633
+                        Eth-Trunk1.6723731
+                        Eth-Trunk1.401
+                        Eth-Trunk1.4055
+                        Eth-Trunk1.3822
+                        Eth-Trunk1.3730
+                        Eth-Trunk1.3659
+                        Eth-Trunk1.5900099
+                        Eth-Trunk1.3652
+                        Eth-Trunk1.3020
+                        Eth-Trunk1.3645
+                        Eth-Trunk1.3651
+                        Eth-Trunk1.3661
+                        Eth-Trunk1.3665
+                        Eth-Trunk1.3675
+                        Eth-Trunk1.3676
+                        Eth-Trunk1.3677
+                        Eth-Trunk1.3684
+                        Eth-Trunk1.3685
+                        Eth-Trunk1.3686
+                        Eth-Trunk1.3687
+                        Eth-Trunk1.3715
+                        Eth-Trunk1.3729
+                        Eth-Trunk1.3756
+                        Eth-Trunk1.3823
+                        Eth-Trunk1.3860
+                        Eth-Trunk1.3865
+                        Eth-Trunk1.3886
+                        Eth-Trunk1.3890
+                        Eth-Trunk1.3896
+                        Eth-Trunk1.3899
+                        Eth-Trunk1.3903
+                        Eth-Trunk1.3917
+                        Eth-Trunk1.3931
+                        Eth-Trunk1.3938
+                        Eth-Trunk1.3945
+                        Eth-Trunk1.4005
+                        Eth-Trunk1.4025
+                        Eth-Trunk1.4039
+                        Eth-Trunk1.3887
+                        Eth-Trunk1.3653
+                        Eth-Trunk1.3600
+                        Eth-Trunk1.3601
+                        Eth-Trunk1.3928
+                        Eth-Trunk1.3932
+                        Eth-Trunk1.5033006
+                        Eth-Trunk1.3930
+                        Eth-Trunk1.5413013
+                        Eth-Trunk1.5033930
+                        Eth-Trunk1.5403001
+                        Eth-Trunk1.5413014
+                        Eth-Trunk1.3891
+                        Eth-Trunk1.5033009
+                        Eth-Trunk1.5783000
+                        Eth-Trunk1.5783003
+ Forwarding Configured: Slave Forwarding
+ Backup mode          : hot
+ Slot-Number          : --
+ Card-Number          : --
+ Port-Number          : --
+ Traffic threshold    : 50(MB)
+ Traffic interval     : 10(minutes)
+
+<HW-BRAS>

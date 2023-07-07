@@ -1,0 +1,33 @@
+display interface Eth-Trunk2
+Eth-Trunk2 current state : UP
+Line protocol current state : UP
+Last line protocol up time : 2023-05-23 17:48:41 UTC+08:00
+Link quality grade : GOOD
+Description:[NO][BRAS]#NE=IP_03KR_00780_17#ET2#HA-Links
+Route Port,Hash arithmetic : According to flow,Maximal BW: 20G, Current BW: 20G, The Maximum Transmit Unit is 9600
+Internet Address is 10.220.14.21/30
+IP Sending Frames' Format is PKTFMT_ETHNT_2, Hardware address is f098-38a8-e3f0
+Physical is ETH_TRUNK
+Current system time: 2023-07-07 17:26:01+08:00
+    Last 300 seconds input rate 13523560 bits/sec, 1363 packets/sec
+    Last 300 seconds output rate 117645280 bits/sec, 12835 packets/sec
+    Realtime 0 seconds input rate 0 bits/sec, 0 packets/sec
+    Realtime 0 seconds output rate 0 bits/sec, 0 packets/sec
+    Input: 4026872619 packets,1149650117327 bytes
+           4026031464 unicast,4 broadcast,841151 multicast
+           0 errors,0 drops
+    Output:29728054106 packets,33724796799578 bytes
+           29727163210 unicast,7 broadcast,890889 multicast
+           0 errors,0 drops
+    Input bandwidth utilization  : 0.07%
+    Output bandwidth utilization : 0.60%
+-----------------------------------------------------
+PortName                      Status      Weight
+-----------------------------------------------------
+GigabitEthernet2/1/1          UP          1
+GigabitEthernet2/1/0          UP          1
+-----------------------------------------------------
+The Number of Ports in Trunk : 2
+The Number of UP Ports in Trunk : 2
+
+<HW-BRAS>

@@ -1,0 +1,8 @@
+display remote-backup-service
+ ---------REMOTE-BACKUP-SERVICE----------
+        SERVER ID  SERVER NAME
+ ----------------------------------------
+                0  rbs_main
+ ----------------------------------------
+  Total 1,1 printed
+<HW-BRAS>

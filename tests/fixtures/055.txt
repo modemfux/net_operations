@@ -1,0 +1,21 @@
+display lldp neighbor interface GigabitEthernet1/1/0
+
+GigabitEthernet1/1/0 has 1 neighbor:
+Neighbor 1:
+ChassisIdSubtype: macAddress
+ChassisId: dcef-80f5-6361
+PortIdSubtype: interfaceName
+PortId: GigabitEthernet3/0/2
+PortDesc: #NE=IP_03_00780_16# GE1/1/0
+SysName: MBH_03_001_4
+SysDesc: Huawei Versatile Routing Platform Software
+VRP (R) software, Version 8.210 (NE40E V800R021C00SPC100)
+Copyright (C) 2012-2021 Huawei Technologies Co., Ltd.
+HUAWEI NE40E-X8A
+
+SysCapSupported: bridge router
+SysCapEnabled: bridge router
+Management address: ipV4: 10.158.9.1
+Expired time: 102
+
+<HW-BRAS>

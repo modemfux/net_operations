@@ -1,0 +1,17 @@
+display static-user ip-address 203.0.113.196
+
+  Interface                :    Eth-Trunk1.3653
+  VLAN ID                  :    3653
+  Static user IP address   :    203.0.113.196
+  Static user Gateway      :    203.0.113.1
+  Static user description  :    -
+  Static user MAC address  :    -
+  Static user domain       :    ipoe-b2b-xrad
+  Initiative detect        :    On
+  Export the route         :    On
+  Static user status       :    Detecting
+  Vpn Instance             :    -
+  Keep Online              :    No
+  Detcet slot              :    1
+  Detect status            :    ARP
+<HW-BRAS>

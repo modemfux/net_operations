@@ -1,0 +1,6 @@
+display memory-usage
+ Memory utilization statistics at 2023-07-07 17:37:40+08:00
+ System Total Memory Is: 1835072712 bytes
+ Total Memory Used Is: 636266480 bytes
+ Memory Using Percentage Is: 34%
+<HW-BRAS>

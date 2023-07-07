@@ -1,0 +1,9 @@
+display device 7
+ Current system trace source: empty
+
+ Current system trace source: empty Current status:         Normal
+ Current source step into pull-in range
+ Clock is in lock mode
+ Clock all sources lost
+
+<HW-BRAS>

@@ -1,0 +1,141 @@
+display version
+Huawei Versatile Routing Platform Software
+VRP (R) software, Version 5.170 (CX600 V600R009C20SPC600)
+Copyright (C) 2000-2017 Huawei Technologies Co., Ltd.
+HUAWEI CX600-X3 uptime is 2033 days, 2 hours, 9 minutes
+Patch version : V600R009SPH033
+CX600-X3 version information:
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+BKP 1 version information:
+  PCB         Version : CX61BKPE REV C
+  MPU  Slot  Quantity : 2
+  SRU  Slot  Quantity : 0
+  SFU  Slot  Quantity : 0
+  LPU  Slot  Quantity : 3
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+MPU version information:
+
+MPU(Master) 4  : uptime is 2033 days, 2 hours, 8 minutes
+         StartupTime   2017/12/12   15:12:29
+  SDRAM Memory Size   : 2048M bytes
+  FLASH Memory Size   : 16M  bytes
+  NVRAM Memory Size   : 512K bytes
+  CFCARD Memory Size : 1348M bytes
+  CFCARD2 Memory Size : 575M bytes
+  CX6D0MPUD170 version information
+  PCB         Version : CR57MPUH REV A
+  EPLD        Version : 101
+  BootROM     Version : 72.0
+  BootLoad    Version : 66.0
+  Software    Version : Version 5.170 RELEASE 0089
+  MonitorBUS version information:
+  Software    Version : 8.87
+MPU(Slave) 5  : uptime is 2033 days, 2 hours, 5 minutes
+         StartupTime   2017/12/12   15:15:53
+  SDRAM Memory Size   : 2048M bytes
+  FLASH Memory Size   : 16M  bytes
+  NVRAM Memory Size   : 512K bytes
+  CFCARD Memory Size : 1348M bytes
+  CFCARD2 Memory Size : 575M bytes
+  CX6D0MPUD170 version information
+  PCB         Version : CR57MPUH REV A
+  EPLD        Version : 101
+  BootROM     Version : 72.0
+  BootLoad    Version : 66.0
+  Software    Version : Version 5.170 RELEASE 0089
+  MonitorBUS version information:
+  Software    Version : 8.87
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+LPU/SPU version information:
+
+LPU 1  : uptime is 2033 days, 1 hour, 59 minutes
+         StartupTime   2017/12/12   15:21:54
+  Host    processor :
+  SDRAM Memory Size: 4096M  bytes
+  Flash Memory Size:  128M  bytes
+  CR5DLPUF517E version information
+  PCB         Version : CR57LPUF120A REV C
+  EPLD        Version : 100
+  FPGA        Version : 101
+  BootROM     Version : 51.0
+  BootLoad    Version : 58.0
+  FSURTP      Version : Version 2.1 RELEASE 0372
+  FSUKERNEL   Version : Version 1.0 RELEASE 0372
+  ASE         Version : 000
+  PE          Version : 000
+  PIC1: StartupTime   2017/12/12    15:22:16
+  CR5D0L2XFE70 version information
+  PCB         Version : CR57L2XFE REV B
+  FPGA        Version : 008
+  MonitorBUS version information:
+  Software    Version : 10.55
+  Configure license items:
+  NULL
+LPU 2  : uptime is 203 days, 16 hours, 10 minutes
+         StartupTime   2022/12/16   01:11:20
+  Host    processor :
+  SDRAM Memory Size: 1024M  bytes
+  Flash Memory Size:   32M  bytes
+  CR5MLPUF402B version information
+  PCB         Version : CR52LPUN REV B
+  EPLD        Version : 101
+  EPLD2       Version : 101
+  BootROM     Version : 301.0
+  BootLoad    Version : 311.0
+  FSURTP      Version : Version 2.1 RELEASE 0372
+  FSUKERNEL   Version : Version 2.1 RELEASE 0372
+  ASE         Version : 017
+  LOAMNET     Version : 3854
+  PE          Version : 600
+  TM          Version : 510
+  PIC1: StartupTime   2022/12/16    01:11:34
+  CR5M00L2XX20 version information
+  PCB         Version : CR52L2XXN REV A
+  FPGA        Version : 203
+  MonitorBUS version information:
+  Software    Version : 6.52
+  Configure license items:
+  LPUF-40-B Upgrade to LPUF-40-A  License
+VSU 3  : uptime is 2033 days, 2 hours, 0 minute
+         StartupTime   2017/12/12   15:20:51
+  Host    processor :
+  SDRAM Memory Size: 4096M  bytes
+  Flash Memory Size:  128M  bytes
+  CR5DVSUF8010 version information
+  PCB         Version : CR57VSUF80 REV B
+  EPLD        Version : 109
+  EPLD2       Version : 106
+  EPLD3       Version : 102
+  BootROM     Version : 2.33
+  BootLoad    Version : 2.20
+  FSURTP      Version : Version 2.1 RELEASE 0372
+  FSUKERNEL   Version : Version 2.1 RELEASE 0372
+  ASE         Version : 011
+  MonitorBUS version information:
+  Software    Version : 10.55
+  Configure license items:
+  CX600 2M NAT Session License
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+CLK version information:
+
+Slot 6 : uptime is 2033 days, 2 hours, 6 minutes
+         StartupTime   2017/12/12   15:15:11
+  1. FPGA     Version : 003
+  2. DSP      Version : 270
+
+Slot 7 : uptime is 2033 days, 2 hours, 5 minutes
+         StartupTime   2017/12/12   15:15:42
+  1. FPGA     Version : 003
+  2. DSP      Version : 270
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+FAN version information:
+
+FAN10's MonitorBUS version information:
+  PCB      Version : CR52FCBG REV A
+  Software Version :  1.12
+
+<HW-BRAS>

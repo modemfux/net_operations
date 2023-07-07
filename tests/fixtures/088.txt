@@ -1,0 +1,10 @@
+display ip vpn-instance BR_TECH interface
+ VPN-Instance Name and ID : BR_TECH, 2
+  Interface Number : 5
+  Interface list : Eth-Trunk1.220,
+                   LoopBack12,
+                   Eth-Trunk1.12,
+                   LoopBack4012,
+                   LoopBack14
+
+<HW-BRAS>

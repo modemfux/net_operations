@@ -1,0 +1,15 @@
+display ssh server status
+ SSH version                         :2.0
+ SSH connection timeout              :60 seconds
+ SSH server key generating interval  :0 hours
+ SSH authentication retries          :3 times
+ SFTP IPv4 server                    :Enable
+ SFTP IPv6 server                    :Disable
+ STELNET IPv4 server                 :Enable
+ STELNET IPv6 server                 :Disable
+ SCP IPv4 server                     :Enable
+ SCP IPv6 server                     :Disable
+ SSH server source                   :0.0.0.0
+ ACL4 number                         :2000
+ ACL6 number                         :0
+<HW-BRAS>

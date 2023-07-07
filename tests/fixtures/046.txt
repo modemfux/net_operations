@@ -1,0 +1,32 @@
+display interface Eth-Trunk1
+Eth-Trunk1 current state : UP
+Line protocol current state : DOWN
+Link quality grade : GOOD
+Description:[M][MBH]#NE=MBH_03_001_4#Eth-Trunk3
+Route Port,Hash arithmetic : According to flow,Maximal BW: 20G, Current BW: 20G, The Maximum Transmit Unit is 9600
+Internet protocol processing : disabled
+IP Sending Frames' Format is PKTFMT_ETHNT_2, Hardware address is f098-38a8-e3f0
+Physical is ETH_TRUNK
+Current system time: 2023-07-07 17:25:11+08:00
+    Last 300 seconds input rate 4463529728 bits/sec, 589260 packets/sec
+    Last 300 seconds output rate 4338984168 bits/sec, 574248 packets/sec
+    Realtime 0 seconds input rate 0 bits/sec, 0 packets/sec
+    Realtime 0 seconds output rate 0 bits/sec, 0 packets/sec
+    Input: 6547539858030 packets,6290864104246023 bytes
+           6541155450635 unicast,5316187117 broadcast,1068220278 multicast
+           0 errors,0 drops
+    Output:6831122397042 packets,6297076719129902 bytes
+           6828943286971 unicast,1085801787 broadcast,1093308284 multicast
+           0 errors,0 drops
+    Input bandwidth utilization  : 22.79%
+    Output bandwidth utilization : 22.15%
+-----------------------------------------------------
+PortName                      Status      Weight
+-----------------------------------------------------
+GigabitEthernet1/1/0          UP          1
+GigabitEthernet1/1/1          UP          1
+-----------------------------------------------------
+The Number of Ports in Trunk : 2
+The Number of UP Ports in Trunk : 2
+
+<HW-BRAS>

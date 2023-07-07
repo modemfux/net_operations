@@ -1,0 +1,18 @@
+display elabel optical-module brief
+Port      BoardType          BarCode         VendorName        Description
+===============================================================================
+Eth1/1/0  MTRS-02X13-G       MA16420502710    HG GENUINE        10300Mb/s-1310nm
+                                                                -LC-10km(0.009mm
+                                                                )
+
+Eth1/1/1  MTRS-02X13-G       MA16420502693    HG GENUINE        10300Mb/s-1310nm
+                                                                -LC-10km(0.009mm
+                                                                )
+
+Eth2/1/0  FTLX1412M3BCL      UMC0NCD          FINISAR CORP.     9900Mb/s-1310nm-
+                                                                LC-10km(0.009mm)
+
+Eth2/1/1  FTLX1412M3BCL      UMC0N3E          FINISAR CORP.     9900Mb/s-1310nm-
+                                                                LC-10km(0.009mm)
+
+<HW-BRAS>

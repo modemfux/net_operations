@@ -1,0 +1,11 @@
+display remote-backup-profile
+ ----------REMOTE-BACKUP-PROFILE----------
+         PROFILE-ID  PROFILE-NAME
+ -----------------------------------------
+         0x1000       rbp_main
+         0x1002       rbp_b2b
+         0x1003       rbp_vlan4054
+         0x1004       b2b_test_gray
+ -----------------------------------------
+  Total 4  printed.
+<HW-BRAS>

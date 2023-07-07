@@ -1,0 +1,39 @@
+display interface GigabitEthernet2/1/1
+GigabitEthernet2/1/1 current state : UP
+Line protocol current state : UP
+Link quality grade : GOOD
+Description:[M][BRAS]#ET2#NE=IP_03KR_00780_17#GE2/1/1
+Route Port,The Maximum Transmit Unit is 9600
+IP Sending Frames' Format is PKTFMT_ETHNT_2, Hardware address is e024-7fb3-4bc9
+The Vendor Name is FINISAR CORP.   , The Vendor PN is FTLX1412M3BCL
+Transceiver max BW: 9900~11300Mbps, Transceiver Mode: Single Mode
+WaveLength: 1310nm, Transmission Distance: 10km
+Rx Optical Power: -0.39dBm, warning range: [-18.01,  2.00]dBm
+Tx Optical Power: -1.91dBm, warning range: [-6.00,  1.00]dBm
+Loopback:none, LAN full-duplex mode, Pause Flowcontrol:Receive Enable and Send Enable
+Last physical up time   : 2023-04-26 14:19:35 UTC+08:00
+Last physical down time : 2022-12-16 01:11:35 UTC+08:00
+Current system time: 2023-07-07 17:26:25+08:00
+Statistics last cleared:2023-05-23 17:37:58
+    Last 300 seconds input rate: 8226184 bits/sec, 886 packets/sec
+    Last 300 seconds output rate: 54541272 bits/sec, 5948 packets/sec
+    Input: 563190501747 bytes, 1964926716 packets
+    Output: 18336926256230 bytes, 16089368975 packets
+    Input:
+      Unicast: 1964637371 packets, Multicast: 289341 packets
+      Broadcast: 4 packets, JumboOctets: 3 packets
+      CRC: 0 packets, Symbol: 0 packets
+      Overrun: 0 packets, InRangeLength: 0 packets
+      LongPacket: 0 packets, Jabber: 0 packets, Alignment: 0 packets
+      Fragment: 0 packets, Undersized Frame: 0 packets
+      RxPause: 0 packets
+    Output:
+      Unicast: 16089075328 packets, Multicast: 293640 packets
+      Broadcast: 7 packets, JumboOctets: 0 packets
+      Lost: 0 packets, Overflow: 0 packets, Underrun: 0 packets
+      System: 0 packets, Overrun: 0 packets
+      TxPause: 0 packets
+    Input bandwidth utilization  : 0.08%
+    Output bandwidth utilization : 0.55%
+
+<HW-BRAS>

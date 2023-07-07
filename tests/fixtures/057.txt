@@ -1,0 +1,22 @@
+display lldp neighbor interface GigabitEthernet2/1/0
+
+GigabitEthernet2/1/0 has 1 neighbor:
+Neighbor 1:
+ChassisIdSubtype: macAddress
+ChassisId: f098-38a8-e3e4
+PortIdSubtype: interfaceName
+PortId: GigabitEthernet2/1/0
+PortDesc: [M][BRAS]#ET2#NE=IP_03KR_00780_16#GE2/1/0
+SysName: BUR-HW2
+SysDesc:
+Huawei Versatile Routing Platform Software
+VRP (R) software, Version 5.170 (CX600 V600R009C20SPC600)
+Copyright (C) 2000-2017 Huawei Technologies Co., Ltd.
+CX600-X3
+
+SysCapSupported: bridge router
+SysCapEnabled: bridge router
+Management address: ipV4: 10.147.41.61
+Expired time: 101
+
+<HW-BRAS>

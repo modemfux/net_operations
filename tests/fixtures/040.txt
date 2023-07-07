@@ -1,0 +1,13 @@
+display device 9
+Type      :NEPS1600-D
+Present   :PRESENT
+Status    :NORMAL
+Cable     :PLUG
+Mode      :DC
+PowerNum  :1
+
+Module    :0
+Present   :PRESENT
+CpuStatus :NORMAL
+
+<HW-BRAS>

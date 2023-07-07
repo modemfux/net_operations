@@ -1,0 +1,41 @@
+display interface GigabitEthernet1/1/1
+GigabitEthernet1/1/1 current state : UP
+Line protocol current state : UP
+Link quality grade : GOOD
+Description:[M][MBH][SORM]#ET1#NE=MBH_03_001_4#Gi7/0/2
+Route Port,The Maximum Transmit Unit is 9600
+IP Sending Frames' Format is PKTFMT_ETHNT_2, Hardware address is f098-3821-b72e
+The Vendor PN is MTRS-02X13-G
+The Vendor Name is HG GENUINE
+Port BW: 10G, Transceiver max BW: 10G, Transceiver Mode: SingleMode
+WaveLength: 1310nm, Transmission Distance: 10km
+Rx Power: -2.56dBm, Warning range: [-14.40,  0.50]dBm
+Tx Power: -3.05dBm, Warning range: [-8.20,  0.50]dBm
+Loopback:none, LAN full-duplex mode, Pause Flowcontrol:Receive Enable and Send Enable
+Last physical up time   : 2023-06-07 00:01:50 UTC+08:00
+Last physical down time : 2023-05-29 16:36:09 UTC+08:00
+Current system time: 2023-07-07 17:26:17+08:00
+Statistics last cleared:2023-05-29 16:38:18
+    Last 300 seconds input rate: 2292915872 bits/sec, 297721 packets/sec
+    Last 300 seconds output rate: 2230976808 bits/sec, 290699 packets/sec
+    Input: 644786889496126 bytes, 679103863179 packets
+    Output: 627137163541619 bytes, 660627003154 packets
+    Input:
+      Unicast: 678850156886 packets, Multicast: 136513518 packets
+      Broadcast: 117192775 packets, JumboOctets: 5827235908 packets
+      CRC: 0 packets, Symbol: 0 packets
+      Overrun: 0 packets, InRangeLength: 1407850 packets
+      LongPacket: 0 packets, Jabber: 0 packets, Alignment: 0 packets
+      Fragment: 0 packets, Undersized Frame: 0 packets
+      RxPause: 0 packets
+    Output:
+      Unicast: 660587252088 packets, Multicast: 39720874 packets
+      Broadcast: 30192 packets, JumboOctets: 126874965855 packets
+      Lost: 0 packets, Overflow: 0 packets, Underrun: 0 packets
+      System: 0 packets, Overrun: 0 packets
+      TxPause: 0 packets
+      Unknown Vlan: 0 packets
+    Input bandwidth utilization  : 23.41%
+    Output bandwidth utilization : 22.77%
+
+<HW-BRAS>

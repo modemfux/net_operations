@@ -1,0 +1,7 @@
+display memory-usage slave
+ Slot 5 Memory utilization Info:
+ Memory utilization statistics at 2023-07-07 17:37:42+08:00
+ System Total Memory Is: 1835072712 bytes
+ Total Memory Used Is: 613726340 bytes
+ Memory Using Percentage Is: 33%
+<HW-BRAS>

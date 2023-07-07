@@ -7,6 +7,7 @@ display value-added-service policy
   2      local                               241      EDSG    241
   3      drop                                241      EDSG    241
   4      srv_og_social                         0      EDSG    0
+  5      unlim_24_36mbps                       0       DAA    0
   ------------------------------------------------------------------
-  Total 5,5 printed
+  Total 6,6 printed
 <HW-BRAS>

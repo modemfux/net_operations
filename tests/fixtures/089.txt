@@ -1,0 +1,6 @@
+display ip vpn-instance NETFLOW interface
+ VPN-Instance Name and ID : NETFLOW, 3
+  Interface Number : 1
+  Interface list : Eth-Trunk1.927
+
+<HW-BRAS>

@@ -1,0 +1,189 @@
+display cpu-usage slot 1
+CPU Usage Stat. Cycle: 60 (Second)
+CPU Usage            : 25% Max: 78%
+CPU Usage Stat. Time : 2023-07-07  17:55:42
+CPU utilization for five seconds: 26%: one minute: 25%: five minutes: 25%
+Max CPU Usage Stat. Time : 2020-05-21 01:47:02.
+
+TaskName    CPU  Runtime(CPU Tick High/Tick Low)  Task Explanation
+BOX_Out      0%              0/      91
+VCLK         0%              0/     14e
+TICK         0%              0/     3ab
+DelPtTask    0%              0/      a1
+CrtPtTask    0%              0/     11e
+PAT          0%              0/     800           PAT
+RTMR         0%              0/     21b           RTMR
+LOAD         0%              0/     193           LOAD
+PATP         0%              0/     c31           PATPPatch's Task of product
+IPCR         0%              0/     55d           IPCR
+LCMT         0%              0/    157a           LCMT
+VPR          1%              0/     b21           VPR
+VPS          0%              0/     322           VPS
+LCMR         0%              0/     256           LCMR
+LCM          0%              0/     38d           LCM
+BK1          0%              0/     32e           BK1
+BK2          0%              0/      d8           BK2
+LPST         0%              0/     809           LPST
+VFPD         0%              0/     32e           VFPD
+VFDH         0%              0/     22d           VFDH
+VFPM         0%              0/     7d9           VFPM
+HALT         0%              0/    3e0c           HALT
+FECD         2%              0/     b15           FECD
+MSFT         0%              0/     396           MSFT
+VHRT         0%              0/     268           VHRT
+FDCT         0%              0/    1b3d           FDCT
+IPCQ         0%              0/    3cc8           IPCQIPC task for single queue
+IPCK         0%              0/     37d           IPCKIPC task for ack message
+IPCA         0%              0/     282           IPCAIPC agent task for
+                                                  receive message
+VP           0%              0/    186a           VP  Virtual path task
+RPCQ         0%              0/     18f           RPCQRemote procedure call
+RTPR         0%              0/    1f62           RTPR
+IPCB         0%              0/     263           IPCBIPC task for broadcast
+                                                  queue
+VMON         0%              0/     1cb           VMONSystem monitor
+TCBM         0%              0/     106           TCBM Task callback block
+                                                  monitor
+VMSH         0%              0/     d45           VMSH
+STND         0%              0/     180           STNDStandby task
+INFO         0%              0/     13f           INFOInformation center
+SAPP         0%              0/     238           SAPP
+APS          0%              0/     21e           APS Automatic Protection
+                                                  Switch
+ISC6         0%              0/      f9           ISC6
+FIB6         0%              0/     1f0           FIB6IPv6 FIB
+BFD          0%              0/     11c           BFD Bidirection Forwarding
+                                                  Detect
+OAM          0%              0/     241           OAM OAM
+LSPA         0%              0/      e8           LSPA
+L2V          0%              0/     967           L2V Layer 2 VPN
+SNPG         0%              0/     38a           SNPG
+RBP          0%              0/   5c221           RBP
+NSE          0%              0/     1a1           NSE
+ADPT         0%              0/     299           ADPT
+APAT         0%              0/     101           APAT
+MQE          0%              0/      e7           MQE
+Mpxy         0%              0/     103           Mpxy
+IGMP         0%              0/      e9           IGMP
+MCIA         0%              0/     a56           MCIA
+MIDU         0%              0/     774           MIDU
+VOSA         0%              0/  ad555c           VOSAVirtual OS adaption
+EAPO         0%              0/     2b3           EAPOL
+IMS          0%              0/     d87           IMS
+TRNK         0%              0/     2b0           TRNK
+PIA          0%              0/     801           PIA
+ISOL         0%              0/     c48           ISOLATE
+NSA          0%              0/     221           NSA
+ATMA         0%              0/     1cb           ATMA
+LLDP         0%              0/     5a2           LLDP
+PIPE         0%              0/   76764           PIPE   Pipe task
+ADP_         0%              0/     68e           ADP_MPLS
+VRFP         0%              0/   a61b0           VRFP
+VSIP         0%              0/     1ab           VSIP
+ARPA         0%              0/      f6           ARPAT
+FLD          0%              0/     3c1           FLD
+BTRC         0%              0/     160           BTRC
+SAM          7%              0/     1a9           SAM
+DCP6         0%              0/     104           DCP6
+DHPA         0%              0/     717           DHPA
+PTPO         0%              0/     249           PTPO
+CESR         0%              0/     7a1           CESR
+CLKM         0%              0/     155           CLKM
+NDB          0%              0/     1a9           NDB
+ArpB         0%              0/     3b2           ArpB
+PTAL         0%              0/     1d0           PTAL
+POXR         0%              0/     4ac           POXR
+POXS         0%              0/     5f0           POXS
+POEC         0%              0/     161           POEC
+LNS          0%              0/     1d3           LNS
+HRP          0%              0/     179           HRP
+HASM         0%              0/     2d3           HASM
+SGA          0%              0/    ef79           SGA
+RUI          0%              0/     152           RUI
+DSLI         0%              0/     b1f           DSLITE8090
+DCN-         0%              0/     13a           DCN-ADA
+SoC          0%              0/    5dec           SoC
+TM           0%              0/     456           TM
+PM           0%              0/     21a           PM  Performance Management
+PMS          0%              0/     13a           PMS PM Server
+TRAF         0%              0/     159           TRAFTraffic Statistics
+TPOA         0%              0/     22d           TPOAM
+CDM          0%              0/    31f1           CDM
+NFPT         0%              0/     23e           NFPTNFP timer task
+SOCK         0%              0/     7dd           SOCKPacket schedule and
+                                                  process
+SDHA         0%              0/     162           SDHAPS Automatic Protection
+                                                  Switch
+FIB          0%              0/    129f           FIB Forward Information Base
+MFIB         0%              0/     106           MFIBMulticast forward info
+IFNT         0%              0/     579           IFNTIfnet task
+PDTT         0%              0/     123           PDTTPDT timer task
+GRSA         0%              0/     109           GRSA
+FMAT         0%              0/     11e           FMATFault Manage task
+L2MF         0%              0/      db           L2MF
+DCPI         0%              0/     1e0           DCPI
+SNP          0%              0/     235           SNP DHCP snooping function
+SNCP         0%              0/      ea           SNCP
+DIAG         1%              0/      ea           DIAG
+SSC          0%              0/     561           SSC
+SRM          0%              0/     af7           SRM
+MRS          0%              0/     222           MRS
+PIAC         1%              0/     4b5           PIAC
+BEAT         0%              0/    a72a           BEAT
+BMON         0%              0/     22c           BMON
+NPRI         0%              0/      c8           NPRI
+MACL         0%              0/     48b           MACL
+TEST         0%              0/   1034f           TESTTest communication
+Ne50         0%              0/     744           Ne5000Stat
+ARPV         0%              0/     21f           ARPV
+MACF         0%              0/     265           MACF
+CPPS         0%              0/     1d1           CPPS
+TSTA         0%              0/     276           TSTATest task agent
+UTSK         0%              0/     1a0           UTSK
+APP          0%              0/      e1           APP
+IP           0%              0/     447           IP
+TUNL         0%              0/     39b           TUNL
+EOAM         0%              0/     326           EOAM1AG
+LINK         0%              0/     104           LINK
+IPFP         0%              0/      97           IPFPM
+L2_R         0%              0/      d3           L2_RING
+VRPT         0%              0/     400           VRPT
+TNQA         0%              0/     34d           TNQAC
+TTNQ         0%              0/      fe           TTNQAS
+TARP         0%              0/      d8           TARPING
+L2           0%              0/      d8           L2
+L2IF         0%              0/      e5           L2IF
+L2_T         0%              0/    12f5           L2_TRUNK
+VRRP         0%              0/     530           VRRP
+L2_P         0%              0/     6ff           L2_PR
+L2_E         0%              0/     315           L2_EOAM_Y1731
+ARP          0%              0/    10ad           ARP
+PBBL         0%              0/     386           PBBL
+FIBP         0%              0/   6c7de           FIBP
+ASYN         0%              0/     1ec           ASYNQOS
+HQOS         0%              0/    5302           HQOS
+2LSQ         0%              0/     164           2LSQ
+QOS          0%              0/     264           QOS NE5000QOS
+PPHQ         0%              0/     162           PPHQ
+QOS-         0%              0/     46e           QOS-PROFILE
+MIRR         0%              0/     372           MIRRMirror_Job
+Capp         0%              0/     14e           Cappkt_Task
+STAT         1%              0/    37fa           STAT
+SQOS         2%              0/   58fac           SQOS
+REPA         0%              0/     206           REPARSE
+QOSA         0%              0/    4995           QOSADA
+DEFD         0%              0/   16963           DEFD
+CPRL         0%              0/     d5f           CPRL
+TMQN         0%              0/     8c2           TMQN
+TAD          0%              0/     1c8           TAD Transmission Alarm
+                                                  Damping
+IFLP         0%              0/    57c1           IFLP
+IFMG         0%              0/     253           IFMG
+Atom         0%              0/     1fd           Atom
+SAID         0%              0/     686           SAID
+TMQP         0%              0/     2d0           TMQP
+TTIP         0%              0/     1bc           TTIPSPPPoE
+TMQI         0%              0/     ecd           TMQI
+VIDL        73%              0/    184b           System idle
+OS          12%              0/ 809bd40           Operation System
+<HW-BRAS>

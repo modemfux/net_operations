@@ -1,0 +1,53 @@
+display remote-backup-service rbs_main
+----------------------------------------------------------
+ Service-Index    : 0
+ Service-Name     : rbs_main
+ TCP-State        : Connected
+ Peer-ip          : 10.220.61.251
+ Source-ip        : 10.220.61.250
+ TCP-Port         : 2046
+ Track-BFD        : --
+ SSL-Policy-Name  : --
+ SSL-State        : --
+ Uplink state     : 2 (1:DOWN 2:UP)
+ Last up time     : 2023-03-15 05:40:40
+ Last down time   : 2023-03-15 05:40:22
+ Last down reason : TCP closed for peer closed
+ Domain-map-list  : --
+----------------------------------------------------------
+
+ ip pool:
+         bypass_ha
+         85_140_42_32_27
+         85_140_42_80_29
+         b2b_prime
+         b2b_bypass
+         pool_nat_01
+         195.19.217.0_24
+         85.140.41.192_26
+ ipv6 pool:
+         internet_ipv6_pool_test
+         ipv_6_pool_128_test
+ Failure ratio    : 100%
+ Failure duration : 0 min
+----------------------------------------------------------
+ Rbs-ID         : 0
+ Protect-type   : ip-redirect
+ Next-hop       : 10.220.14.22
+ Vlanid         : 0
+ Peer-ip        : 10.220.14.22
+ Vrfid          : 0
+ Tunnel-state   : UP
+ Tunnel-OperFlag: NORMAL
+ Spec-interface : Eth-Trunk2
+ Total users    : 8058
+ Path 1:
+     Tunnel-index   : 0x0
+     Tunnel-index-v6: 0x0
+     Out-interface  : Eth-Trunk2
+     Vc-lable       : 4294967295
+     Vc-lable-v6    : 4294967295
+     User-number    : 8058
+     Public-Lsp-Load: FALSE
+
+<HW-BRAS>

@@ -1,0 +1,8 @@
+display eth-trunk sub-interface
+Maximum number of Eth-trunk sub-interfaces : 16384
+Current number of Eth-trunk sub-interfaces : 324
+Interface           Sub-interface number
+-----------------------------------------------------------
+Eth-Trunk1                           323
+Eth-Trunk2                             1
+<HW-BRAS>

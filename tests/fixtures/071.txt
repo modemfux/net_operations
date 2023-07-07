@@ -1,0 +1,18 @@
+display saved-configuration configuration
+Auto backup configuration status                     : Enable
+Auto backup configuration interval                   : 1440 minutes
+Backup delay after configuration changed             : 1 minutes
+The threshold of the CPU usage permitted when backup : 50%(default)
+
+Auto backup configuration server 1 information:
+ Server IP       : 10.156.129.189
+ Transport-type  : TFTP
+ Server path     : conf_files/Core
+ Vpn-instance    : BR_OAM
+
+Auto backup configuration server 2 information:
+ Server IP       : 10.147.37.23
+ Transport-type  : TFTP
+ Server path     : BUR/MU/
+ Vpn-instance    : BR_OAM
+<HW-BRAS>

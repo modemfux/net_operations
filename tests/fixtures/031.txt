@@ -1,0 +1,19 @@
+display cur conf user-interface
+#
+user-interface con 0
+user-interface aux 0
+user-interface vty 0 4
+ acl 2000 inbound
+ authentication-mode aaa
+ user privilege level 15
+ history-command max-size 256
+ idle-timeout 30 0
+user-interface vty 16 20
+ acl 2000 inbound
+ authentication-mode aaa
+ user privilege level 15
+ history-command max-size 256
+ idle-timeout 30 0
+#
+return
+<HW-BRAS>

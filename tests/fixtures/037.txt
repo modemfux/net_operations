@@ -1,0 +1,10 @@
+display device 6
+ Current system trace source: empty
+
+ Current system trace source: empty Current status:         Normal
+ SSM control:            off
+ Current source out of pull-in range
+ Clock is in free-run mode
+ Clock all sources lost
+
+<HW-BRAS>

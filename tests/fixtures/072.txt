@@ -1,4 +1,4 @@
-dis service-policy cache
+display service-policy cache
   ------------------------------------------------------------------------
   Index       Policy name                          Type        Used num
   ------------------------------------------------------------------------
