@@ -174,7 +174,7 @@ def get_hw_intf_with_statics(conn, with_output=True):
     r_intf = r"(\S+) +\d\S+ +\S+ +\S+ +\S+"
     output = conn.send_commands("display static-user")
     reg = re.compile(r_intf)
-    intf = list({intf.group(1) for intf in reg.finditer(output)})
+    intf = list(sorted({intf.group(1) for intf in reg.finditer(output)}))
     return (intf, output) if with_output else intf
 
 

@@ -323,7 +323,7 @@ def test_get_huawei_total_users(fx_acc_user_ip_type):
 @pytest.fixture
 def fx_intf_with_statics():
     fx_intfs = ["Eth-Trunk1.3652", "Eth-Trunk1.3653"]
-    with open('tests/fixtures/dis_static_user.txt') as src:
+    with open('tests/fixtures/021.txt') as src:
         fx_output = src.read()
     return fx_intfs, fx_output
 
@@ -331,6 +331,6 @@ def fx_intf_with_statics():
 def test_get_hw_intf_with_statics(fx_intf_with_statics):
     fx_intfs, _ = fx_intf_with_statics
     result = get_hw_intf_with_statics(dummy, with_output=False)
-    assert fx_intfs == result
+    assert sorted(fx_intfs) == result
     result = get_hw_intf_with_statics(dummy, with_output=True)
     assert fx_intf_with_statics == result

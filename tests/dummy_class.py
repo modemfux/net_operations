@@ -108,7 +108,7 @@ class DummyConnection:
         if args or kwargs:
             pass
         for command in commands_list:
-            filename = self.commands[command]
+            filename = "tests/fixtures/" + self.commands[command]
             with open(filename) as src:
                 mid = src.read()
             self.prompt = mid.split('\n')[-1]
