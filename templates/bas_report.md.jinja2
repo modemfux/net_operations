@@ -1,0 +1,81 @@
+
+# BAS Report for {{ device_ip }}
+
+***Report generated at {{ report_time }} UTC***
+
+## Quick reminder for Huawei-specific terms
+
+- **bind** - (authentication method) IPoE (Opt82/QinQ)
+- **ppp** - (authentication method) PPPoE/L2TP
+- **Normal** - users without HA session backup
+- **RUI Local** - locally terminated access users
+- **RUI Remote** - sessions received via remote backup services
+
+## Summary users information
+
+{% for ip_type, info in total_users.items() %}
+- Qty of {{ ip_type }} users
+  - Normal: {{ info.normal }}
+  - RUI Local: {{ info.rui_local }}
+  - RUI Remote: {{ info.rui_remote }}
+  - RADIUS authentication: {{ info.radius_auth }}
+  - No authentication: {{ info.no_auth }}
+{% endfor %}
+
+## BAS Licenses information
+
+{% if licenses%}
+|  License  |                   Description                   |  Type  | Qty |
+|-----------|-------------------------------------------------|--------|-----|
+  {% for license in licenses %}
+|{{ license.name }}|{{ license.description }}|{{ license.type }}|{{license.qty}}|
+  {% endfor %}
+{% endif %}
+
+## BAS Interfaces information
+
+{% if bas_interfaces %}
+|    BAS Interface    | Preauthentication domain |  Authentication domain   | Method |     GRT/VRF     |
+|---------------------|--------------------------|--------------------------|--------|-----------------|
+  {% for intf in bas_interfaces %}
+|{{ intf.name }}|{{ intf.preauth_domain }}|{{ intf.authen_domain }}|{{ intf.authen_method }}|{{ intf.vrf }}|
+  {% endfor %}
+{% endif %}
+
+## BAS Domains information
+
+{% if domains_info %}
+  {% for domain in domains_info %}
+- {{ domain.name }}
+  - Online users: {{ domain.online }}
+  - Authentication scheme: {{ domain.authen_scheme}}
+  - Accounting scheme: {{ domain.account_scheme }}
+    {% if domain.author_scheme %}
+  - Authorization scheme: {{ domain.author_scheme }}
+    {% endif %}
+    {% if domain.radius_server %}
+  - RADIUS Server Template: {{ domain.radius_server }}
+    {% endif %}
+    {% if domain.tacacs_server %}
+  - TACACS+ Server Template: {{ domain.tacacs_server }}
+    {% endif %}
+    {% if domain.redirect_url %}
+  - Redirect url: {{ domain.redirect_url }}
+    {% endif %}
+    {% if domain.default_ip_pool %}
+  - Default IP Pool name: {{ domain.default_ip_pool }}
+    {% endif %}
+    {% if domain.nat_user_group %}
+  - Binded NAT User-group: {{ domain.nat_user_group }}
+    {% endif %}
+    {% if domain.nat_instance %}
+  - Binded NAT Instance: {{ domain.nat_instance }}
+    {% endif %}
+
+  {% endfor %}
+{% endif%}
+
+```
+There should be RADIUS Servers information
+and information about RBS and RBP
+```
