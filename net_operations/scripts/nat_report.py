@@ -17,7 +17,7 @@ def main():
     try:
         conn.establish_connection()
         report_dic = get_nat_report_dict(conn)
-        report_str = generate_from_template('templates/nat_report.jinja2',
+        report_str = generate_from_template('templates/nat_report.md.jinja2',
                                             report_dic)
         time = str(datetime.now()).replace(' ', '_').replace(':', '.')
         filename = f'{time}_{ip}.md'
