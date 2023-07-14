@@ -20,13 +20,14 @@
   - RUI Remote: {{ info.rui_remote }}
   - RADIUS authentication: {{ info.radius_auth }}
   - No authentication: {{ info.no_auth }}
+  - Total: {{ info.total }}
 {% endfor %}
 
 ## BAS Licenses information
 
 {% if licenses%}
-|  License  |                   Description                   |  Type  | Qty |
-|-----------|-------------------------------------------------|--------|-----|
+|   License   |                   Description                   |  Type  | Qty |
+|-------------|-------------------------------------------------|--------|-----|
   {% for license in licenses %}
 |{{ license.name }}|{{ license.description }}|{{ license.type }}|{{license.qty}}|
   {% endfor %}
@@ -35,10 +36,10 @@
 ## BAS Interfaces information
 
 {% if bas_interfaces %}
-|    BAS Interface    | Preauthentication domain |  Authentication domain   | Method |     GRT/VRF     |
-|---------------------|--------------------------|--------------------------|--------|-----------------|
+|    BAS Interface    | Preauthentication domain |  Authentication domain   | Method |     GRT/VRF     |      RBP      | Static users qty |
+|---------------------|--------------------------|--------------------------|--------|-----------------|---------------|------------------|
   {% for intf in bas_interfaces %}
-|{{ intf.name }}|{{ intf.preauth_domain }}|{{ intf.authen_domain }}|{{ intf.authen_method }}|{{ intf.vrf }}|
+|{{ intf.name }}|{{ intf.preauth_domain }}|{{ intf.authen_domain }}|{{ intf.authen_method }}|{{ intf.vrf }}|{{ intf.rbp_name }}|{{ intf.static_qty }}|
   {% endfor %}
 {% endif %}
 
@@ -75,7 +76,25 @@
   {% endfor %}
 {% endif%}
 
-```
-There should be RADIUS Servers information
-and information about RBS and RBP
-```
+## Used RADIUS servers information
+
+{% if radius_info %}
+  {% for radius in radius_info %}
+- RADIUS server template: {{ radius.name }}
+    {% for srv in radius.authen_servers %}
+  - Authentication server {{ srv.ip }}:
+    - Port: {{ srv. port }}
+    - Weight: {{ srv.weight }}
+    - VRF: {{ srv.vrf }}
+    {% endfor %}
+    {% for srv in radius.account_servers %}
+  - Accounting server {{ srv.ip }}
+    - Port: {{ srv. port }}
+    - Weight: {{ srv.weight }}
+    - VRF: {{ srv.vrf }}
+    {% endfor %}
+  - Source interface: {{ radius.src_interface }}
+  - Calling-station-ID format: {{ radius.call_station_id }}
+
+  {% endfor %}
+{% endif %}
