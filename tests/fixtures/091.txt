@@ -1,0 +1,86 @@
+display bas-interface Eth-Trunk1.3652
+
+  Access type                                  : Layer2-subscriber
+  BASIF state                                  : Updated
+  BASIF name                                   : Eth-Trunk1.3652
+  Pre-authentication default domain            : default0
+  Authentication default domain                : dom_ipoe_white_no_auth
+  Replace authentication domain forcibly       : None
+  Roam domain                                  : default1
+  Permit domain                                : -
+  Deny domain                                  : -
+  Permit domain list                           : -
+  Deny domain list                             : -
+  Accounting copy RADIUS server                : -
+  Authentication method                        : [bind]
+  IPV6 Authentication method                   : [ppp]
+  Nas port type                                : ethernet (15)
+  Client-id(DHCPv4 Option61) Hardware-type     : -
+  Vendor-class(DHCPv4 option60/DHCPv6 option16): Off
+  DHCPv6 vendor-Class code                     : 16
+  DHCPv6 vendor-Class offset                   : 0
+  Client option82                              : On
+  Client access-line-id(DHCPv4 option82/DHCPv6 option18+37+17+38): On
+  Client access-line-id insert type            : -
+  Client access-line-id parse mode             : -
+  Agent-circuit-Id transfer mode               : -
+  Agent-remote-Id transfer  mode               : -
+  Client access-line-id include                : -,-,separator:no
+  Client access-line-id DSLAM identify         : -
+  DHCP broadcast                               : Off
+  DHCP proxy                                   : On
+  DHCP shortlease                              : Off
+  DHCP forcerenew retransmit-interval          : -
+  DHCP forcerenew retransmit-times             : -
+  DHCP filter-policy acl                       : -
+  PPP filter-policy acl                        : -
+  IP trigger                                   : Off
+  IPv6 trigger                                 : Off
+  ARP trigger                                  : Off
+  ND trigger                                   : Off
+  Vpn Instance                                 :
+  802.1p-To-Vpn                                : Off
+  ND proxy                                     : Off
+  Multicast control (session/vlan)             : Off/Off
+  ARP proxy                                    : Off
+  User detect interval                         : 30
+  User detect retransmit times                 : 5
+  User detect no-datacheck                     : 0
+  Access-delay type                            : Disable
+  Dot1x authentication trigger                 : Off
+  Wlan option82 decode-mode ap-mac             : -
+  Wlan option82 decode-mode ssid               : -
+  Manager state                                : Active
+  Block PE VLAN/CE VLAN                        : -/-
+  Access limit                                 : 65536
+  Access limit PVC                             : -
+  Access limit PE VLAN/CE VLAN                 : -/-
+  Access number                                : 1
+  Qos-profile inbound                          :
+  Qos-profile outbound                         :
+  Trust 8021p protocol                         : Off
+  Configured vlan number                       : 220
+  NAS-Port-Id                                  : HW-BRAS eth 0/0/4/0:--.--
+  NAS logic port                               : -
+  NAS logic sysname                            : -
+  NAS logic IP                                 : -
+  VBAS MAC addres                              : -
+  VBAS authentication mode                     : -
+  Client PPPoE option0x105 mapping interface   : -
+  Default user name template                   : ut_bur
+  Default password template                    : -
+  Service identify policy                      : -
+  Wlan switch                                  : Off
+  Wlan ssid                                    : Off
+  Ssid                                         : -
+  Link-account resolve                         : Off
+  IPv6 ND RA unicast                           : Off
+  DHCP trust broadcast flag                    : Off
+  Calling-number-avp cevlan-offset             : -
+  Dhcp lease-proxy type                        :-
+  Dhcp lease-proxy                             :0
+  Dhcp lease-proxy first step                  :0
+  Dhcp lease-proxy seconde step                :0
+  Dhcp lease-proxy renew-packet through-time   :0
+
+<HW-BRAS>

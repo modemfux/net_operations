@@ -96,7 +96,11 @@ class DummyConnection:
             "display ip vpn-instance BR_CORE_OAM interface": "086.txt",
             "display ip vpn-instance BR_OAM interface": "087.txt",
             "display ip vpn-instance BR_TECH interface": "088.txt",
-            "display ip vpn-instance NETFLOW interface": "089.txt"
+            "display ip vpn-instance NETFLOW interface": "089.txt",
+            "display bas-interface Eth-Trunk1.540": "090.txt",
+            "display bas-interface Eth-Trunk1.3652": "091.txt",
+            "display bas-interface Eth-Trunk1.3653": "092.txt",
+            "display bas-interface Eth-Trunk1.6963878": "093.txt"
         }
 
         self.ip = '127.0.0.1'

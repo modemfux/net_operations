@@ -43,7 +43,7 @@ final_dict = {
             "authen_domain": "dom_ipoe_main",   # V
             "authen_method": "bind",            # V
             "vrf": "GRT",                       # V + Should be normalized
-            "static_qty": "0",
+            "static_qty": "0",                  
             "rbp_name": "rbp_main"
         },
         {

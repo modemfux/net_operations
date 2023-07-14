@@ -89,3 +89,7 @@ File	Command
 087.txt	display ip vpn-instance BR_OAM interface
 088.txt	display ip vpn-instance BR_TECH interface
 089.txt	display ip vpn-instance NETFLOW interface
+090.txt	display bas-interface Eth-Trunk1.540
+091.txt	display bas-interface Eth-Trunk1.3652
+092.txt	display bas-interface Eth-Trunk1.3653
+093.txt	display bas-interface Eth-Trunk1.6963878
