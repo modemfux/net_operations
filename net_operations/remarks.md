@@ -4,9 +4,9 @@
 
 ```python
 final_dict = {
-    "total_users": {
-        "ipv4": {
-            "normal": "100",
+    "total_users": {              # From `get_huawei_total_users`
+        "ipv4": {                 # Qty should be normalized:
+            "normal": "100",      # if `None` then value == '0'
             "rui_local": "500",
             "rui_remote": "400",
             "radius_auth": "900",
@@ -22,7 +22,7 @@ final_dict = {
             "total": "0"
         }
     },
-    "licenses": [
+    "licenses": [                 # From `get_hw_bas_licenses`
         {
             "name": "LCX6QS0100",
             "description": "CX600 Subscribers Quantity(1k Subscribers)",
@@ -38,11 +38,11 @@ final_dict = {
     ],
     "bas_interfaces": [
         {
-            "name": "Eth-Trunk1.505",
-            "preauth_domain": "dom_zappa",
-            "authen_domain": "dom_ipoe_main",
-            "authen_method": "bind",
-            "vrf": "GRT",
+            "name": "Eth-Trunk1.505",           # `get_huawei_bas_interfaces`
+            "preauth_domain": "dom_zappa",      # `get_huawei_bas_intf_info`
+            "authen_domain": "dom_ipoe_main",   # V
+            "authen_method": "bind",            # V
+            "vrf": "GRT",                       # V + Should be normalized
             "static_qty": "0",
             "rbp_name": "rbp_main"
         },

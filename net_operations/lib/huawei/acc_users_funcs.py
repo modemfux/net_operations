@@ -1,3 +1,5 @@
+from net_operations.lib.constants import CX600_LICENSE
+from net_operations.lib.huawei.main_info_funcs import get_hw_license_list
 import re
 
 
@@ -170,6 +172,13 @@ def get_huawei_total_users(conn):
     return users_dict
 
 
+def normalize_total_users(tot_users):
+    for type_ in tot_users:
+        for key, value in tot_users[type_].items():
+            if value is None:
+                tot_users[type_][key] = "0"
+
+
 def get_hw_intf_with_statics(conn, with_output=True):
     r_intf = r"(\S+) +\d\S+ +\S+ +\S+ +\S+"
     output = conn.send_commands("display static-user")
@@ -222,3 +231,23 @@ def get_hw_static_users(conn):
             dict_upd.update(ver_dict)
             users_dict[intf].append(dict_upd)
     return users_dict
+
+
+def get_hw_bas_licenses(conn):
+    all_lic = get_hw_license_list(conn)
+    bas_licenses = []
+    for lic in all_lic:
+        name = lic['name']
+        if any([name in CX600_LICENSE['BRAS'], name in CX600_LICENSE['HA']]):
+            bas_licenses.append(lic)
+    return bas_licenses
+
+
+def get_hw_bas_report_dict(conn):
+    total_users = normalize_total_users(get_huawei_total_users(conn))
+    licenses = get_hw_bas_licenses(conn)
+    bas_report = {
+        "total_users": total_users,
+        "licenses": licenses
+    }
+    return bas_report
